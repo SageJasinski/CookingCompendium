@@ -6,14 +6,14 @@
     </head>
     <body>
         <div><h1>The Cooking Compendium</h1></div>
-        <section id="Menu">
-            <nav>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Occasion</a></li>
-                <li><a href="#">By meal</a></li>
-            </nav>
-        </section>
-
+        <script src="app.js"></script>
+            <div id="mySidebar" class="Sidebar">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
+                <a href="#">Home</a>
+                <a href="#">Occasion</a>
+                <a href="#">By meal</a>
+            </div>
+            <button class="openbtn" onclick="openNav()">☰</button>
         <section>
             <img class="display-img" src="Cake.jpg">
             <img class="display-img" src="Meats.jpg">
@@ -28,7 +28,8 @@
             <h2 class="main">A note on account privacy</h2>
             <p class="main">this is an open source project so when signing in don't use a password you use regularly.</p>
         </section>
-
+        <br>
+        <br>
         <footer>
             <p>&copy; Sage Jasinski</p>
         </footer>
