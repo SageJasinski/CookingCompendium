@@ -122,22 +122,30 @@ h2 {
 }
 
 .foodImg {
-    margin-left: 40%;
-    width: 200px;
-    height: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    width: 300px;
+    height: 300px;
 }
 
 .recipe h3 {
     border-top: #789788 dotted;
+    width: 600px;
     padding: 10px;
     border-radius:20px;
+    margin: auto;
+    margin-top: 20px;
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #333131;
 }
 
 .recipe h2 {
+    margin: auto;
     text-align: center;
+    width: 400px;
     border: #657e72 solid;
     background-color: #789788;
     padding: 10px;
@@ -145,14 +153,20 @@ h2 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.recipe ul {
+    margin: auto;
+}
+
 .recipe ul li {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin-left: 0;
+    padding: 5px;
 }
 
 .recipe p {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 10px;
+    margin: auto;
+    width: 600px;
 }
 
 .recipe ul {

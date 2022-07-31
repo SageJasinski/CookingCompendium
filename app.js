@@ -11,12 +11,3 @@ function closeNav(){
 
 }
 
-let ul = document.getElementsByClassName("foodList");
-let li = document.getElementsByTagName("li");
-let numItm = li.length;
-
-let css = document.createElement("style");
-css.type ="text/css";
-css.innerHTML = "ul {column-count: " + Math.round(numItm/2) + "; }";
-document.body.appendChild(css);
-
