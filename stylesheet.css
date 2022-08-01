@@ -144,6 +144,7 @@ h2 {
 
 .recipe h2 {
     margin: auto;
+    margin-top: 40px;
     text-align: center;
     width: 400px;
     border: #657e72 solid;
