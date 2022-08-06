@@ -59,7 +59,7 @@ html, body{
 
 .openbtn:hover {
     background-color: #aa8a92;
-    color: #4e4a4a;
+    color: antiquewhite;
 }
 
 div {
@@ -121,6 +121,46 @@ h2 {
     color: antiquewhite;
 }
 
+.dropdown {
+    background-color: #977880;
+    position: relative;
+    display: inline-block;
+}
+
+#Dinnerbtn {
+    font-size: 25px;
+    color: #333131;
+    background-color: #977880;
+    border: none;
+}
+
+#Dinnerbtn:hover {
+    color: antiquewhite;
+}
+
+#Dinnerbtn:active {
+    color: #789788;
+}
+
+.dropcontent button{
+    color: #333131;
+    background-color: #b6a0a5;
+    border: none;
+    display: block;
+}
+
+.dropcontent button:hover {
+    color: antiquewhite;
+}
+
+.dropcontent {
+    display: none;
+    background-color: #b6a0a5;
+    position: absolute;
+    min-width: 80px;
+    z-index: 1;
+}
+
 .foodImg {
     display: block;
     margin-left: auto;
@@ -161,6 +201,7 @@ h2 {
 .recipe ul li {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 5px;
+    font-size: 20px;
 }
 
 .recipe p {

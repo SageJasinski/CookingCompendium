@@ -7,6 +7,7 @@
     <body>
        <div><h1>By Meal</h1></div>
         <script src="app.js"></script>
+        
         <div id="mySidebar" class="Sidebar">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
             <a href="index.html">Home</a>
@@ -14,14 +15,22 @@
             <a href="meal.html">By meal</a>
             <a href="#">Alphabetical</a>
         </div>
-        <nav class="subnavbar">
+
+        <div class="dropdown">
+            <button class="openbtn" onclick="openNav()">☰</button>
+            <button id="Dinnerbtn">Dinner</button>
+            <div class="dropcontent">
+                <button class="subbtn">Taco soup</button>
+                <button class="subbtn">Pancit</button>
+            </div>
+        </div>
+
+        <!-- <nav class="subnavbar">
             <a href="#">Breakfast</a>
             <a href="#">Lunch</a>
-            <a href="#">Dinner</a>
             <a href="#">Dessert</a>
             <a href="#">Treat</a>
-        </nav>
-        <button class="openbtn" onclick="openNav()">☰</button>
+        </nav> -->
 
         <section class="recipe">
             <h2>Refrigerator rolls</h2>
@@ -78,7 +87,7 @@
         </section>
 
         <section class="recipe"> <!-- Meaty Minestrone soup -->
-            <h2>Meaty Minestrone soup</h2>
+            <h2 class="dinner">Meaty Minestrone soup</h2>
             <img src="Pizza.jpg" class="foodImg">
             <h3>Ingredients</h3>
             <ul class="foodList">
@@ -107,7 +116,7 @@
         </section>
 
         <section class="recipe"> <!-- Taco soup-->
-            <h2>Taco soup</h2>
+            <h2 class="dinner">Taco soup</h2>
             <img src="Pizza.jpg" class="foodImg">
             <h3>Ingredients</h3>
             <ul class="foodList">
@@ -132,7 +141,7 @@
         </section>
 
         <section class="recipe"> <!-- Pancit -->
-            <h2>Pancit</h2>
+            <h2 class="dinner">Pancit</h2>
             <img src="Pizza.jpg" class="foodImg">
             <h3>Ingredients</h3>
             <ul class="foodList">

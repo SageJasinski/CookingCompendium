@@ -11,3 +11,8 @@ function closeNav(){
 
 }
 
+function meal(){
+    let div = doncument.getElementById("dinner-content");
+    let dinner = document.getElementsByClassName("dinner").value;
+
+}
