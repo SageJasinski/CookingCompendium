@@ -1,0 +1,68 @@
+body{
+    margin: auto;
+    background-image: url('../images/background-one.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    backdrop-filter: brightness(0.7);
+}
+
+.Head{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color:#4B6858;
+    width: 50vw;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+
+
+    .logo {
+        position: absolute;
+        height: 100px;
+        width: auto;
+        margin-top: -170px;
+    }
+
+    h1{
+        margin-top: 50px;
+        color: #E8E8E8;
+        font-family:Arial, Helvetica, sans-serif;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-link{
+        transition: transform 0.5s;
+        display: inline-block;
+        padding: 20px;
+        color: #E8E8E8;
+        text-decoration: none;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .nav-link:hover{
+        color: #C6ECAE;
+        transform: scale(1.1);
+    }
+}
+
+.scroll-box{
+    display: flex;
+    margin-top: 30px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .card {
+        margin: auto;
+        .card-img{
+            margin: auto;
+            width: 180px;
+            height: auto;
+        }
+    }
+}
