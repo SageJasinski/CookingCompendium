@@ -1,0 +1,31 @@
+@import "variables";
+
+.contact{
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+
+    margin-top: 50px;
+
+    display: flex;
+    justify-content: center;
+    background-color: $primary-color;
+    border-radius: 20px;
+    height: 10vh;
+
+    h5{
+        margin: auto;
+        color: $offWhite;
+    }
+
+    a{
+        margin: auto;
+        color: $offWhite;
+    }
+}
+
+.flow{
+    display: block;
+    padding: 20px;
+    width: 100%;
+}

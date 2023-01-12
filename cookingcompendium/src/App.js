@@ -1,9 +1,10 @@
 import './Styles/App.scss';
 import React from 'react';
 import Logo from './images/logo.png'
-import { Navbar, Nav, Container} from 'react-bootstrap';
+import { Navbar, Nav, Container, Row, Col} from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.css';
+import Footer from './Footer';
 
 class App extends React.Component{
   state = {
@@ -17,7 +18,7 @@ class App extends React.Component{
 
 
   render(){
-    console.log(this.state.data);
+
     return(
       <>
 
@@ -37,16 +38,23 @@ class App extends React.Component{
         </Navbar>
       </div>
 
-        <div className='scroll-box'>
+
+      <Container fluid className='scroll'>
+        <Row className="overflow-auto">
           {this.state.data.map(item => (
-              <Card key={item.id}>
+            <Col key={item.id}>
+              <Card>
                 <Card.Img src={item.image} />
                 <Card.Body>
                 <Card.Title>{item.title}</Card.Title>
                 </Card.Body>
               </Card>
+            </Col>
           ))}
-        </div>
+        </Row>
+      </Container>
+
+      <Footer/>
       </>
     )
   }

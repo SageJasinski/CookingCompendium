@@ -1,3 +1,5 @@
+@import "variables";
+
 body{
     margin: auto;
     background-image: url('../images/background-one.png');
@@ -12,7 +14,7 @@ body{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background-color:#4B6858;
+    background-color:$primary-color;
     width: 50vw;
     margin: auto;
     margin-top: 100px;
@@ -29,7 +31,7 @@ body{
 
     h1{
         margin-top: 50px;
-        color: #E8E8E8;
+        color: $offWhite;
         font-family:Arial, Helvetica, sans-serif;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
@@ -38,31 +40,38 @@ body{
         transition: transform 0.5s;
         display: inline-block;
         padding: 20px;
-        color: #E8E8E8;
+        color: $offWhite;
         text-decoration: none;
         font-family: Arial, Helvetica, sans-serif;
     }
 
     .nav-link:hover{
-        color: #C6ECAE;
+        color: $highlight-color;
         transform: scale(1.1);
     }
 }
 
-.scroll-box{
-    display: flex;
-    margin-top: 30px;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-
+.scroll{
+    margin: 30px auto;
+    height: auto;
+    max-width: 60vw;
     .card {
         margin: auto;
+        margin-top: 30px;
+        max-width: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         .card-img{
             margin: auto;
+            margin-top: 10px;
             width: 180px;
             height: auto;
         }
     }
+    .overflow-auto{
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+
 }
