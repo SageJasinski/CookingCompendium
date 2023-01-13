@@ -55,16 +55,30 @@ body{
     margin: 30px auto;
     height: auto;
     max-width: 60vw;
+    background-color: $secondary-color;
+    border: solid 5px $primary-color;
+    border-radius: 10px;
+
+    ::-webkit-scrollbar {
+        height: 1.5em;
+        width: 12px;
+        background-color: $primary-color;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: $primary-color-dark;
+        border-radius: 6px;
+    }
+
     .card {
-        margin: auto;
-        margin-top: 30px;
+        margin: 30px;
         max-width: 200px;
         display: flex;
         justify-content: center;
         align-items: center;
+        background-color: $offWhite;
+        color: $accent-color;
         .card-img{
-            margin: auto;
-            margin-top: 10px;
+            margin: 10px;
             width: 180px;
             height: auto;
         }
@@ -74,4 +88,16 @@ body{
         overflow-x: auto;
     }
 
+}
+
+
+@keyframes scroll {
+    from{
+        // transform: translateX(0);
+        scroll-position:left top;
+    }
+    to{
+        // transform: translateX(-100%);
+        scroll-position:right bottom;
+    }
 }

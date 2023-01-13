@@ -4,7 +4,6 @@ import Logo from './images/logo.png'
 import { Navbar, Nav, Container, Row, Col} from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.css';
-import Footer from './Footer';
 
 class App extends React.Component{
   state = {
@@ -14,6 +13,8 @@ class App extends React.Component{
   componentDidMount() {
     const data = require('./Database.json');
     this.setState({data})
+
+    document.title = "Cooking Compendium";
   }
 
 
@@ -42,7 +43,7 @@ class App extends React.Component{
       <Container fluid className='scroll'>
         <Row className="overflow-auto">
           {this.state.data.map(item => (
-            <Col key={item.id}>
+            <Col key={item.id} className="column">
               <Card>
                 <Card.Img src={item.image} />
                 <Card.Body>
@@ -54,7 +55,6 @@ class App extends React.Component{
         </Row>
       </Container>
 
-      <Footer/>
       </>
     )
   }

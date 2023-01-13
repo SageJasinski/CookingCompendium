@@ -1,11 +1,10 @@
 @import "variables";
 
-.contact{
-    position: sticky;
-    bottom: 0;
-    width: 100%;
 
-    margin-top: 50px;
+.contact{
+    width: 100%;
+    margin-top: auto;
+
 
     display: flex;
     justify-content: center;
@@ -22,10 +21,4 @@
         margin: auto;
         color: $offWhite;
     }
-}
-
-.flow{
-    display: block;
-    padding: 20px;
-    width: 100%;
 }
