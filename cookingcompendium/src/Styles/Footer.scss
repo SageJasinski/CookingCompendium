@@ -1,0 +1,24 @@
+@import "variables";
+
+
+.contact{
+    width: 100%;
+    margin-top: auto;
+
+
+    display: flex;
+    justify-content: center;
+    background-color: $primary-color;
+    border-radius: 20px;
+    height: 10vh;
+
+    h5{
+        margin: auto;
+        color: $offWhite;
+    }
+
+    a{
+        margin: auto;
+        color: $offWhite;
+    }
+}

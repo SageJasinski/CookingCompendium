@@ -1,7 +1,7 @@
 import './Styles/App.scss';
 import React from 'react';
 import Logo from './images/logo.png'
-import { Navbar, Nav, Container} from 'react-bootstrap';
+import { Navbar, Nav, Container, Row, Col} from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -13,11 +13,13 @@ class App extends React.Component{
   componentDidMount() {
     const data = require('./Database.json');
     this.setState({data})
+
+    document.title = "Cooking Compendium";
   }
 
 
   render(){
-    console.log(this.state.data);
+
     return(
       <>
 
@@ -37,16 +39,22 @@ class App extends React.Component{
         </Navbar>
       </div>
 
-        <div className='scroll-box'>
+
+      <Container fluid className='scroll'>
+        <Row className="overflow-auto">
           {this.state.data.map(item => (
-              <Card key={item.id}>
+            <Col key={item.id} className="column">
+              <Card>
                 <Card.Img src={item.image} />
                 <Card.Body>
                 <Card.Title>{item.title}</Card.Title>
                 </Card.Body>
               </Card>
+            </Col>
           ))}
-        </div>
+        </Row>
+      </Container>
+
       </>
     )
   }
