@@ -1,4 +1,6 @@
-This site was made from scratch by Sage Jasinski
-You can find me on github and most social platforms
+# The Compendium
 
-w3schools was instrumental in helping figure out what the hell i was doing
+The cooking compendium is a simple recipe website that collects old hand written recipes and digitizes them for other to see.
+
+## Current version
+the current version is begin transfered to a react-bootstrap based frontend and may be unavailable.
