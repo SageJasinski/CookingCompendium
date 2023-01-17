@@ -4,6 +4,8 @@ import Logo from './images/logo.png'
 import { Navbar, Nav, Container, Row, Col} from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.css';
+import { Link } from 'react-router-dom';
+// import Recipe from './Recipe';
 
 class App extends React.Component{
   state = {
@@ -47,7 +49,9 @@ class App extends React.Component{
               <Card>
                 <Card.Img src={item.image} />
                 <Card.Body>
-                <Card.Title>{item.title}</Card.Title>
+                  <Link to="/recipe">
+                    <Card.Title>{item.title}</Card.Title>
+                  </Link>
                 </Card.Body>
               </Card>
             </Col>
