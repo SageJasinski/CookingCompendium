@@ -9,100 +9,398 @@ body{
     backdrop-filter: brightness(0.7);
 }
 
-.Head{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    background-color:$primary-color;
-    width: 50vw;
-    margin: auto;
-    margin-top: 100px;
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-
-
-    .logo {
-        position: absolute;
-        height: 100px;
-        width: auto;
-        margin-top: -170px;
-    }
-
-    h1{
-        margin-top: 50px;
-        color: $offWhite;
-        font-family:Arial, Helvetica, sans-serif;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
-
-    .nav-link{
-        transition: transform 0.5s;
-        display: inline-block;
-        padding: 20px;
-        color: $offWhite;
-        text-decoration: none;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .nav-link:hover{
-        color: $highlight-color;
-        transform: scale(1.1);
-    }
-}
-
-.scroll{
-    margin: 30px auto;
-    height: auto;
-    max-width: 60vw;
-    background-color: $secondary-color;
-    border: solid 5px $primary-color;
-    border-radius: 10px;
-
-    ::-webkit-scrollbar {
-        height: 1.5em;
-        width: 12px;
-        background-color: $primary-color;
-    }
-    ::-webkit-scrollbar-thumb {
-        background-color: $primary-color-dark;
-        border-radius: 6px;
-    }
-    .plain{
-        text-decoration: none;
-        color: inherit;
-    }
-
-    .card {
-        margin: 30px;
-        max-width: 200px;
+@media(min-width: $desktop) {
+    .Head{
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        justify-content: space-around;
         align-items: center;
-        background-color: $offWhite;
-        color: $accent-color;
-
-        .card-img{
-            margin: 10px;
-            width: 180px;
-            height: auto;
+        background-color:$primary-color;
+        width: 50vw;
+        margin: auto;
+        margin-top: 100px;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    
+    
+        .logo {
+            position: absolute;
+            height: 100px;
+            width: auto;
+            margin-top: -170px;
+        }
+    
+        h1{
+            margin-top: 50px;
+            color: $offWhite;
+            font-family:Arial, Helvetica, sans-serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+    
+        .nav-link{
+            transition: transform 0.5s;
+            display: inline-block;
+            padding: 20px;
+            color: $offWhite;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    
+        .nav-link:hover{
+            color: $highlight-color;
+            transform: scale(1.1);
         }
     }
-    .overflow-auto{
-        flex-wrap: nowrap;
-        overflow-x: auto;
+
+    .scroll{
+        margin: 30px auto;
+        height: auto;
+        max-width: 60vw;
+        background-color: $secondary-color;
+        border: solid 5px $primary-color;
+        border-radius: 10px;
+    
+        ::-webkit-scrollbar {
+            height: 1.5em;
+            width: 12px;
+            background-color: $primary-color;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: $primary-color-dark;
+            border-radius: 6px;
+        }
+        .plain{
+            text-decoration: none;
+            color: inherit;
+        }
+    
+        .card {
+            margin: 30px;
+            max-width: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $offWhite;
+            color: $accent-color;
+    
+            .card-img{
+                margin: 10px;
+                width: 180px;
+                height: auto;
+            }
+        }
+        .overflow-auto{
+            flex-wrap: nowrap;
+            overflow-x: auto;
+        }
+    
     }
 
+    @keyframes scroll {
+        from{
+            // transform: translateX(0);
+            scroll-position:left top;
+        }
+        to{
+            // transform: translateX(-100%);
+            scroll-position:right bottom;
+        }
+    }
 }
 
-
-@keyframes scroll {
-    from{
-        // transform: translateX(0);
-        scroll-position:left top;
+@media (min-width:$tablet) and (max-width: $desktop){
+    .Head{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        background-color:$primary-color;
+        width: 50vw;
+        margin: auto;
+        margin-top: 100px;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    
+    
+        .logo {
+            position: absolute;
+            height: 100px;
+            width: auto;
+            margin-top: -170px;
+        }
+    
+        h1{
+            margin-top: 50px;
+            color: $offWhite;
+            font-family:Arial, Helvetica, sans-serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+    
+        .nav-link{
+            transition: transform 0.5s;
+            display: inline-block;
+            padding: 20px;
+            color: $offWhite;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    
+        .nav-link:hover{
+            color: $highlight-color;
+            transform: scale(1.1);
+        }
     }
-    to{
-        // transform: translateX(-100%);
-        scroll-position:right bottom;
+
+    .scroll{
+        margin: 30px auto;
+        height: auto;
+        max-width: 60vw;
+        background-color: $secondary-color;
+        border: solid 5px $primary-color;
+        border-radius: 10px;
+    
+        ::-webkit-scrollbar {
+            height: 1.5em;
+            width: 12px;
+            background-color: $primary-color;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: $primary-color-dark;
+            border-radius: 6px;
+        }
+        .plain{
+            text-decoration: none;
+            color: inherit;
+        }
+    
+        .card {
+            margin: 30px;
+            max-width: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $offWhite;
+            color: $accent-color;
+    
+            .card-img{
+                margin: 10px;
+                width: 180px;
+                height: auto;
+            }
+        }
+        .overflow-auto{
+            flex-wrap: nowrap;
+            overflow-x: auto;
+        }
+    
+    }
+
+    @keyframes scroll {
+        from{
+            // transform: translateX(0);
+            scroll-position:left top;
+        }
+        to{
+            // transform: translateX(-100%);
+            scroll-position:right bottom;
+        }
+    }
+}
+
+@media (min-width:$phone) and (max-width:$tablet) {
+    .Head{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        background-color:$primary-color;
+        width: 80vw;
+        margin: auto;
+        margin-top: 100px;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    
+    
+        .logo {
+            position: absolute;
+            height: 100px;
+            width: auto;
+            margin-top: -200px;
+        }
+    
+        h1{
+            margin-top: 50px;
+            color: $offWhite;
+            font-family:Arial, Helvetica, sans-serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+    
+        .nav-link{
+            transition: transform 0.5s;
+            display: inline-block;
+            padding: 20px;
+            color: $offWhite;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    
+        .nav-link:hover{
+            color: $highlight-color;
+            transform: scale(1.1);
+        }
+    }
+
+    .scroll{
+        margin: 30px auto;
+        height: auto;
+        max-width: 80vw;
+        background-color: $secondary-color;
+        border: solid 5px $primary-color;
+        border-radius: 10px;
+    
+        ::-webkit-scrollbar {
+            height: 1.5em;
+            width: 12px;
+            background-color: $primary-color;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: $primary-color-dark;
+            border-radius: 6px;
+        }
+        .plain{
+            text-decoration: none;
+            color: inherit;
+        }
+    
+        .card {
+            margin: 30px;
+            max-width: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $offWhite;
+            color: $accent-color;
+    
+            .card-img{
+                margin: 10px;
+                width: 180px;
+                height: auto;
+            }
+        }
+        .overflow-auto{
+            flex-wrap: nowrap;
+            overflow-x: auto;
+        }
+    
+    }
+
+    @keyframes scroll {
+        from{
+            // transform: translateX(0);
+            scroll-position:left top;
+        }
+        to{
+            // transform: translateX(-100%);
+            scroll-position:right bottom;
+        }
+    }
+}
+
+@media(max-width: $phone){
+    .Head{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        background-color:$primary-color;
+        width: 80vw;
+        margin: auto;
+        margin-top: 100px;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    
+    
+        .logo {
+            position: absolute;
+            height: 100px;
+            width: auto;
+            margin-top: -200px;
+        }
+    
+        h1{
+            margin-top: 50px;
+            color: $offWhite;
+            font-family:Arial, Helvetica, sans-serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+    
+        .nav-link{
+            transition: transform 0.5s;
+            display: inline-block;
+            padding: 20px;
+            color: $offWhite;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    
+        .nav-link:hover{
+            color: $highlight-color;
+            transform: scale(1.1);
+        }
+    }
+
+    .scroll{
+        margin: 30px auto;
+        height: auto;
+        max-width: 80vw;
+        background-color: $secondary-color;
+        border: solid 5px $primary-color;
+        border-radius: 10px;
+    
+        ::-webkit-scrollbar {
+            height: 1.5em;
+            width: 12px;
+            background-color: $primary-color;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: $primary-color-dark;
+            border-radius: 6px;
+        }
+        .plain{
+            text-decoration: none;
+            color: inherit;
+        }
+    
+        .card {
+            margin: 30px;
+            max-width: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $offWhite;
+            color: $accent-color;
+    
+            .card-img{
+                margin: 10px;
+                width: 180px;
+                height: auto;
+            }
+        }
+        .overflow-auto{
+            flex-wrap: nowrap;
+            overflow-x: auto;
+        }
+    
+    }
+
+    @keyframes scroll {
+        from{
+            // transform: translateX(0);
+            scroll-position:left top;
+        }
+        to{
+            // transform: translateX(-100%);
+            scroll-position:right bottom;
+        }
     }
 }

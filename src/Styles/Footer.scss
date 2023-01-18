@@ -1,26 +1,117 @@
 @import "variables";
 
 
-.contact{
-    width: 100%;
-    margin-top: auto;
+
+@media (max-width: $phone) {
+    .contact{
+        width: 100%;
+        margin-top: auto;
 
 
-    display: flex;
-    justify-content: center;
-    background-color: $primary-color;
-    border-radius: 20px 20px 0px 0px;
-    border-top: 5px solid $primary-color-dark;
-    height: 10vh;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: $primary-color;
+        border-radius: 20px 20px 0px 0px;
+        border-top: 5px solid $primary-color-dark;
+        height: 10vh;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 
-    h5{
-        margin: auto;
-        color: $offWhite;
-    }
+        h5{
+            margin: auto;
+            margin-top: 10px;
+            color: $offWhite;
+            font-size: medium;
+        }
 
-    a{
-        margin: auto;
-        color: $offWhite;
+        a{
+            margin: auto;
+            color: $offWhite;
+            font-size: small;
+        }
     }
 }
+
+@media(min-width: $phone) and (max-width: $tablet){
+    .contact{
+        width: 100%;
+        margin-top: auto;
+
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: $primary-color;
+        border-radius: 20px 20px 0px 0px;
+        border-top: 5px solid $primary-color-dark;
+        height: 10vh;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+        h5{
+            margin: auto;
+            margin-top: 10px;
+            color: $offWhite;
+        }
+
+        a{
+            margin: auto;
+            color: $offWhite;
+        }
+    }
+}
+
+@media (min-width:$tablet) and (max-width: $desktop){
+    .contact{
+        width: 100%;
+        margin-top: auto;
+
+
+        display: flex;
+        justify-content: center;
+        background-color: $primary-color;
+        border-radius: 20px 20px 0px 0px;
+        border-top: 5px solid $primary-color-dark;
+        height: 10vh;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+        h5{
+            margin: auto;
+            color: $offWhite;
+        }
+
+        a{
+            margin: auto;
+            color: $offWhite;
+        }
+    }
+}
+
+@media (min-width: $desktop){
+    .contact{
+        width: 100%;
+        margin-top: auto;
+
+
+        display: flex;
+        justify-content: center;
+        background-color: $primary-color;
+        border-radius: 20px 20px 0px 0px;
+        border-top: 5px solid $primary-color-dark;
+        height: 10vh;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+        h5{
+            margin: auto;
+            color: $offWhite;
+        }
+
+        a{
+            margin: auto;
+            color: $offWhite;
+        }
+    }
+}
+
+
+
+
