@@ -4,6 +4,7 @@ import App from './App';
 import Recipe from './Recipe';
 import Footer from './Footer';
 import './Styles/Index.scss';
+import Sorted from './Sorted';
 
 class Main extends React.Component{
   constructor(props){
@@ -45,6 +46,14 @@ class Main extends React.Component{
               <Footer/>
             </div>
           }/>
+
+          <Route path='/sorted' element={
+            <div className='flow'>
+              <Sorted title={this.getTitleFromApp} image={this.getImageFromApp} list={this.getListFromApp} directions={this.getDirectionsFromApp}/>
+              <Footer/>
+            </div>
+          }/>
+
         </Routes>
       </BrowserRouter>
     )
