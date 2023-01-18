@@ -4,7 +4,8 @@ import Logo from './images/logo.png'
 import { Navbar, Nav, Container, Row, Col} from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Link } from 'react-router-dom';
+// import {withRouter} from 'react-router';
+import { Link,} from 'react-router-dom';
 // import Recipe from './Recipe';
 
 class App extends React.Component{
@@ -20,8 +21,13 @@ class App extends React.Component{
   }
 
 
-  render(){
+  handelOnClick = (data) =>{
+    this.props.title(data.title);
+    this.props.image(data.image);
+  }
 
+
+  render(){
     return(
       <>
 
@@ -46,14 +52,18 @@ class App extends React.Component{
         <Row className="overflow-auto">
           {this.state.data.map(item => (
             <Col key={item.id} className="column">
-              <Card>
-                <Card.Img src={item.image} />
-                <Card.Body>
-                  <Link to="/recipe">
-                    <Card.Title>{item.title}</Card.Title>
-                  </Link>
-                </Card.Body>
-              </Card>
+
+              <Link className='plain' to={{
+                pathname: '/recipe',
+              }}>
+
+                <Card onClick={() => {this.handelOnClick(item)}}>
+                  <Card.Img src={item.image} />
+                  <Card.Body>
+                      <Card.Title>{item.title}</Card.Title>
+                  </Card.Body>
+                </Card>
+              </Link>
             </Col>
           ))}
         </Row>

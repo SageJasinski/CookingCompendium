@@ -1,21 +1,6 @@
 import React from 'react';
-import {createRoot} from 'react-dom/client';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import App from './App';
-import Recipe from './Recipe';
-import Footer from './Footer';
-import './Styles/Index.scss';
+import ReactDOM from 'react-dom/client';
+import Main from './Main';
+const container = document.getElementById('root');
 
-createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
-    <Routes>
-      <Route exact path='/' element={
-      <div className='flow'>
-        <App />
-        <Footer/>
-     </div>}/>
-
-      <Route path='/recipe' element={<Recipe/>}/>
-    </Routes>
-  </BrowserRouter>
-)
+ReactDOM.createRoot(container).render(<Main />);

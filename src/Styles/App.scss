@@ -68,6 +68,10 @@ body{
         background-color: $primary-color-dark;
         border-radius: 6px;
     }
+    .plain{
+        text-decoration: none;
+        color: inherit;
+    }
 
     .card {
         margin: 30px;
@@ -77,6 +81,7 @@ body{
         align-items: center;
         background-color: $offWhite;
         color: $accent-color;
+
         .card-img{
             margin: 10px;
             width: 180px;
