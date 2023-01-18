@@ -3,6 +3,7 @@
         "id": 0,
         "title": "Sugar Cookies",
         "image": "https://i.postimg.cc/C1CxhDbr/Cake.jpg",
+        "tag":["dessert"],
         "ingredients": [
             "1 1/2 Cups Powdered Sugar",
             "1 Cup Margarine Softened",
@@ -19,6 +20,7 @@
         "id": 1,
         "title": "Taco soup",
         "image": "https://i.postimg.cc/C1CxhDbr/Cake.jpg",
+        "tag":["meal"],
         "ingredients": [
             "1lb ground beef",
             "1 chopped onion",
@@ -34,6 +36,7 @@
         "id": 2,
         "title": "No bake Cookies - Gma Dixon",
         "image": "https://i.postimg.cc/C1CxhDbr/Cake.jpg",
+        "tag":["dessert"],
         "ingredients": [
            "2 cups sugar",
            "½ cup condensed milk",
@@ -48,6 +51,7 @@
         "id": 3,
         "title": "Boil Raisin Cake",
         "image": "https://i.postimg.cc/C1CxhDbr/Cake.jpg",
+        "tag":["dessert"],
         "ingredients": [
             "1 ½ cup sugar",
             "1 cup shortening",
@@ -84,6 +88,7 @@
         "id": 5,
         "title": "Christmas Jello",
         "image": "https://i.postimg.cc/C1CxhDbr/Cake.jpg",
+        "tag":["dessert","holiday"],
         "ingredients": [
             "20 oz can Crushed pineapple",
             "1 small package of lime jello",
@@ -101,6 +106,7 @@
         "id": 6,
         "title": "Chex Muddy Buddies",
         "image": "https://i.postimg.cc/C1CxhDbr/Cake.jpg",
+        "tag":["dessert","holiday"],
         "ingredients": [
             "9 cups chex cereal",
             "1 cup semi-sweet chocolate chips",
@@ -115,6 +121,7 @@
         "id": 7,
         "title": "Cookie-Jar Gingersnaps",
         "image": "https://i.postimg.cc/C1CxhDbr/Cake.jpg",
+        "tag":["dessert","holiday"],
         "ingredients": [
             "2 cups sifted flour",
             "1 Tbsp Ground ginger",

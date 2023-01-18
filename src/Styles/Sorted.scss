@@ -21,6 +21,11 @@
     border-radius: 0 0 10px 10px;
     margin-bottom: 30px;
 
+    .plain{
+        text-decoration: none;
+        color: inherit;
+    }
+
     .card{
         height: 350px;
         width: 220px;
@@ -28,11 +33,10 @@
         text-align: center;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
     }
-    .plain{
-        text-decoration: none;
-        color: inherit;
-    }
+
 }
+
+
 
 .Head{
     margin-bottom: 50px;
@@ -40,6 +44,11 @@
     .nav-link:active{
         color: $highlight-color;
         transform: scale(1.1);
+    }
+
+    .plain{
+        text-decoration: none;
+        color: inherit;
     }
 }
 
