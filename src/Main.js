@@ -14,6 +14,7 @@ class Main extends React.Component{
       image:'',
       ingredients: [],
       directions: '',
+      path: ''
     }
   }
 
@@ -29,6 +30,9 @@ class Main extends React.Component{
   getDirectionsFromApp =(data) =>{
     this.setState({directions: data});
   }
+  pathHandler = (data) => {
+    this.setState({path: data});
+  }
 
   render(){
     return (
@@ -36,7 +40,7 @@ class Main extends React.Component{
         <Routes>
           <Route exact path='/' element={
           <div className='flow'>
-            <App title={this.getTitleFromApp} image={this.getImageFromApp} list={this.getListFromApp} directions={this.getDirectionsFromApp}/>
+            <App title={this.getTitleFromApp} image={this.getImageFromApp} list={this.getListFromApp} directions={this.getDirectionsFromApp} path={this.pathHandler}/>
             <Footer/>
           </div>}/>
 
@@ -49,7 +53,7 @@ class Main extends React.Component{
 
           <Route path='/sorted' element={
             <div className='flow'>
-              <Sorted title={this.getTitleFromApp} image={this.getImageFromApp} list={this.getListFromApp} directions={this.getDirectionsFromApp}/>
+              <Sorted title={this.getTitleFromApp} image={this.getImageFromApp} list={this.getListFromApp} directions={this.getDirectionsFromApp} path={this.state.path}/>
               <Footer/>
             </div>
           }/>

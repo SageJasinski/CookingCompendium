@@ -12,7 +12,7 @@ class Sorted extends React.Component{
             dessertData: [],
             mealData: [],
             holidayData: [],
-            alphaSort: true,
+            alphaSort: false,
             dessert: false,
             holiday: false,
             meal:false
@@ -23,26 +23,33 @@ class Sorted extends React.Component{
         const data = require('./Database.json');
         data.sort((a,b) => {return a.title.localeCompare(b.title);});
         this.setState({data: data});
+
+        this.setState({[this.props.path]: true});
+
+        const filtered = data.filter(item => item.tag && item.tag.includes('dessert'));
+        this.setState({dessertData: filtered});
+
+        const filtered1 = data.filter(item => item.tag && item.tag.includes('meal'));
+        this.setState({mealData: filtered1});
+
+        const filtered2 = data.filter(item => item.tag && item.tag.includes('holiday'));
+        this.setState({holidayData: filtered2});
+
+
     }
 
 
     dessertHandler = () => {
         this.setState({dessert:true, alphaSort:false, holiday:false, meal: false});
-        const filtered = this.state.data.filter(item => item.tag && item.tag.includes('dessert'));
-        this.setState({dessertData: filtered});
     }
     mealHandler = () => {
         this.setState({meal:true, dessert:false, alphaSort:false, holiday:false});
-         const filtered = this.state.data.filter(item => item.tag && item.tag.includes('meal'));
-        this.setState({mealData: filtered});
     }
     alphaHandler = () => {
         this.setState({meal:false, dessert:false, alphaSort:true, holiday:false});
     }
     holidayHandler = () => {
         this.setState({meal:false, dessert:false, alphaSort:false, holiday:true});
-        const filtered = this.state.data.filter(item => item.tag && item.tag.includes('holiday'));
-        this.setState({holidayData: filtered});
     }
 
     handelOnClick = (data) =>{
