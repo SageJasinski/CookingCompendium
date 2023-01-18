@@ -11,6 +11,8 @@ class Main extends React.Component{
     this.state ={
       cardTitle: 'No title',
       image:'',
+      ingredients: [],
+      directions: '',
     }
   }
 
@@ -20,6 +22,12 @@ class Main extends React.Component{
   getImageFromApp=(data) => {
     this.setState({image: data});
   }
+  getListFromApp = (data) => {
+    this.setState({ingredients: data});
+  }
+  getDirectionsFromApp =(data) =>{
+    this.setState({directions: data});
+  }
 
   render(){
     return (
@@ -27,13 +35,13 @@ class Main extends React.Component{
         <Routes>
           <Route exact path='/' element={
           <div className='flow'>
-            <App title={this.getTitleFromApp} image={this.getImageFromApp}/>
+            <App title={this.getTitleFromApp} image={this.getImageFromApp} list={this.getListFromApp} directions={this.getDirectionsFromApp}/>
             <Footer/>
           </div>}/>
 
           <Route path='/recipe' element={
             <div>
-              <Recipe title={this.state.cardTitle} image={this.state.image}/>
+              <Recipe title={this.state.cardTitle} image={this.state.image} ingredients={this.state.ingredients} directions={this.state.directions}/>
               <Footer/>
             </div>
           }/>

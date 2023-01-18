@@ -24,6 +24,8 @@ class App extends React.Component{
   handelOnClick = (data) =>{
     this.props.title(data.title);
     this.props.image(data.image);
+    this.props.list(data.ingredients);
+    this.props.directions(data.directions);
   }
 
 

@@ -9,8 +9,10 @@
     display: flex;
     justify-content: center;
     background-color: $primary-color;
-    border-radius: 20px;
+    border-radius: 20px 20px 0px 0px;
+    border-top: 5px solid $primary-color-dark;
     height: 10vh;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 
     h5{
         margin: auto;

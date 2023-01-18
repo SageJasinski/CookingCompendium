@@ -9,7 +9,7 @@ class Footer extends React.Component{
             <>
 
                 <div className="contact">
-                    <h5> &copy; Sage Jasinski </h5>
+                    <h5> &copy; Cooking Compendium </h5>
                     <a href="/">SageJasinski@gmail.com</a>
                 </div>
             </>
