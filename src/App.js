@@ -4,9 +4,7 @@ import Logo from './images/logo.png'
 import { Navbar, Nav, Container, Row, Col} from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.css';
-// import {withRouter} from 'react-router';
-import { Link,} from 'react-router-dom';
-// import Recipe from './Recipe';
+import { Link} from 'react-router-dom';
 
 class App extends React.Component{
   state = {
@@ -40,10 +38,10 @@ class App extends React.Component{
         <Navbar className='main-nav'>
           <Container>
             <Nav>
-              <Nav.Link to="/" className='nav-link'>Meal</Nav.Link>
-              <Nav.Link to="/" className='nav-link'>Dessert</Nav.Link>
-              <Nav.Link to="/" className='nav-link'>A-Z</Nav.Link>
-              <Nav.Link to="/" className='nav-link'>Holiday</Nav.Link>
+              <Link to="/" className='nav-link'>Meal</Link>
+              <Link to="/" className='nav-link'>Dessert</Link>
+              <Link to="/sorted" className='nav-link'>A-Z</Link>
+              <Link to="/" className='nav-link'>Holiday</Link>
             </Nav>
           </Container>
         </Navbar>

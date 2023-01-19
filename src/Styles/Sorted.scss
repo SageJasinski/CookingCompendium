@@ -1,0 +1,64 @@
+@import "variables";
+
+// body{
+//     margin: auto;
+//     background-image: url('../images/background-one.png');
+//     background-position: center;
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//     backdrop-filter: brightness(0.7);
+// }
+
+.display{
+    background-color: $secondary-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    flex-wrap: wrap;
+    width: 80vw;
+    border: solid 5px $offWhite;
+    border-radius: 0 0 10px 10px;
+    margin-bottom: 30px;
+
+    .plain{
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .card{
+        height: 350px;
+        width: 220px;
+        margin: 20px;
+        text-align: center;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    }
+
+}
+
+
+
+.Head{
+    margin-bottom: 50px;
+
+    .nav-link:active{
+        color: $highlight-color;
+        transform: scale(1.1);
+    }
+
+    .plain{
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+.sort-title{
+    text-align: center;
+    color: $offWhite;
+    background-color: $accent-color;
+    border-radius: 10px 10px 0 0;
+    width: 80vw;
+    margin: auto;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
