@@ -14,7 +14,6 @@ class App extends React.Component{
   componentDidMount() {
     const data = require('./Database.json');
     this.setState({data})
-
     document.title = "Cooking Compendium";
   }
 
@@ -25,7 +24,9 @@ class App extends React.Component{
     this.props.list(data.ingredients);
     this.props.directions(data.directions);
   }
-
+  pathHandler= (path) =>{
+    this.props.path(path);
+  }
 
   render(){
     return(
@@ -38,10 +39,10 @@ class App extends React.Component{
         <Navbar className='main-nav'>
           <Container>
             <Nav>
-              <Link to="/" className='nav-link'>Meal</Link>
-              <Link to="/" className='nav-link'>Dessert</Link>
-              <Link to="/sorted" className='nav-link'>A-Z</Link>
-              <Link to="/" className='nav-link'>Holiday</Link>
+              <Link to="/sorted" onClick={() => {this.pathHandler('meal')}} className='nav-link'>Meal</Link>
+              <Link to="/sorted" onClick={() => {this.pathHandler('dessert')}} className='nav-link'>Dessert</Link>
+              <Link to="/sorted"  onClick={() => {this.pathHandler('alphaSort')}} className='nav-link'>A-Z</Link>
+              <Link to="/sorted" onClick={() => {this.pathHandler('holiday')}} className='nav-link'>Holiday</Link>
             </Nav>
           </Container>
         </Navbar>
