@@ -135,5 +135,92 @@
 
         ],
         "directions": "Sift dry ingredients together. Cream the shortening and sugar. Add Egg and molasses Beat until fluffy. Sift in dry ingredients and blend well. Roll teaspoon of dough in hands and cover with granulated sugar. Place 2 inch's apart on an ungreased cookie sheet. Bake at 350 deg until the tops are crackly and light brown, about 12-15min. Do not overbake. Cool and store in airtight containers. Makes about 4 doz. Cookies."
+    },
+    {
+        "id": 8,
+        "title": "Peanut Brittle",
+        "image": "https://i.postimg.cc/C1CxhDbr/Cake.jpg",
+        "tag":["dessert","holiday"],
+        "ingredients": [
+            "2 cups sugar",
+            "1 cup light corn syrup",
+            "2 cup Raw Spanish Peanuts",
+            "1 Tbls Butter",
+            "1 tsp soda"
+        ],
+        "directions": "Heat and stir Sugar, syrup, and 1 cup water in a 3qrt pan till sugar dissolves. Cook over medium heat to a soft boil(234 deg). Add nuts and 1/2 tsp. Salt. Cook to a hard crack stage (305 deg) stirring often. Remove from heat and quickly stir in peanut butter and soda. Pour onto 2 well-buttered 15 1/2 by 10 ½ by 1 in pans, spread with a spatula . Spread thin with a fork and break up when the candy is cold.."
+    },
+    {
+        "id": 9,
+        "title": "Old Fashioned Molasses Cookies",
+        "image": "https://i.postimg.cc/C1CxhDbr/Cake.jpg",
+        "tag":["dessert","holiday"],
+        "ingredients": [
+            "¾ cups Cooking Oil",
+            "¼ cup dark Molasses",
+            "1 ¼ cups sugar",
+            "2 eggs",
+            "2 ¾ cups Flour",
+            "1 ½ tsp baking soda",
+            "1 tsp ground ginger",
+            "1 tsp cinnamon",
+            "¼ ground cloves"
+        ],
+        "directions": "In a large bowl, stir together oil, molasses, and 1 cup sugar until smooth. In another bowl, stir together dry ingredients. Gradually add moist mixture, and stir to combine. Cover tightly with plastic wrap and refrigerate for 1 hr or until the next day. Place remaining ¼ cup sugar in a small bowl. Roll dough into ½ inch balls, covered with sugar. Place 3” apart on a cooking sheet, baking at 350 degrees for 10-12 minutes. Transfer to a cooling rack."
+    },
+    {
+        "id": 10,
+        "title": "Lime squares",
+        "image": "https://i.postimg.cc/C1CxhDbr/Cake.jpg",
+        "tag":["dessert"],
+        "ingredients": [
+            "7 Tbsp Butter",
+           " ⅓ cup sugar",
+            "½ tsp vanilla",
+            "1 tsp grated lime rind",
+            "¼ tsp salt",
+            "1 cup all purpose flour",
+            "2 eggs",
+            "¾ cup sugar",
+            "2 Tbsp flour",
+            "2 tsp lime rinds",
+            "3 Tbsp lime juice",
+            "¼ tsp baking powder",
+            "¼ tsp powdered sugar"
+        ],
+        "directions": "Beat butter and sugar in a bowl until creamy. Beat in vanilla, rind, and salt. Beat in flour until dough forms. With floured fingers pat dough into a 9X9X2 pan lined with foil and buttered. Bake at 350 deg for about 40 min or until golden. Start preparing the topping by stirring together the sugar, lime juice, eggs, flour, lime rind, baking powder, and food coloring. Mix until very smooth, then pour over the crust. Bake for 15-20 min. Cool on a wire rack. Cool completely before lifting the foil from the pan. Cut into 2X2 squares. Decorate each square with cherry and green icing leaf if desired."
+    },
+    {
+        "id": 11,
+        "title": "Basic Sweet Dough",
+        "image": "https://i.postimg.cc/C1CxhDbr/Cake.jpg",
+        "tag":["dessert", "meal"],
+        "ingredients": [
+            "2 ½ cup milk",
+            "⅓ cup shortening",
+            "½ cup sugar",
+            "1 tsp salt",
+            "2 pkg. Dry yeast",
+            "½ cup warm water",
+            "6 ½ - 7 cups flour",
+            "1 beaten egg"
+        ],
+        "directions": "Heat Together milk,shortening, sugar, and salt water, Add 2 cups flour to the milk mixture. Add egg and mix. Add the rest of the flour and knead to a soft, pliable, almost sticky Dough. Let Raise in oiled Bowl until it's doubled in size. Punch down and knead air bubbles out. Roll for cinnamon rolls or buns (you may add chocolate chips , candied fruit and or nuts to dough). Place on a greased Pan. Let raise then bake at 400 deg until brown. Then frost with my favorite icing."
+    },
+    {
+        "id": 12,
+        "title": "Banana Bread",
+        "image": "https://i.postimg.cc/C1CxhDbr/Cake.jpg",
+        "tag":["dessert"],
+        "ingredients": [
+            "¼ cup Butter",
+            "1 cup sugar",
+            "1 egg",
+            "3 mashed bananas",
+            "2 cup flour",
+           "1 tsp baking soda",
+            "½ tsp salt"
+        ],
+        "directions": "Cream the butter with sugar. Add the egg and bananas then mix well. Add flour, baking soda, and salt. Pour in a very greased Loaf pan. Bake at 350 deg for 1 hour."
     }
 ]
