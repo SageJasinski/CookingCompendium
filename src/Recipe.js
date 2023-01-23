@@ -7,6 +7,10 @@ import Logo from './images/logo.png';
 
 class Recipe extends React.Component{
 
+    componentDidMount(){
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+    }
+
     render(){
         return(
             <>
@@ -27,6 +31,15 @@ class Recipe extends React.Component{
                 </div>
 
                 <p className="directions">{this.props.directions}</p>
+
+                <div className="ad">
+                    <ins className="adsbygoogle"
+                        data-ad-client="ca-pub-5445071165173481"
+                        style={{ display: 'block' }}
+                        data-ad-slot="5167208377"
+                        data-ad-format="auto"
+                        data-full-width-responsive="true"/>
+                </div>
             </div>
             </>
         )

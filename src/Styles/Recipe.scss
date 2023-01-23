@@ -73,6 +73,11 @@
             line-height: 30px;
         }
     }
+
+    .ad{
+        width: 300px;
+        height: 250px;
+    }
 }
 
 @media (min-width:$phone) and (max-width:$tablet){
@@ -146,6 +151,11 @@
             // font-weight: 400;
             line-height: 30px;
         }
+    }
+
+    .ad{
+        width: 300px;
+        height: 250px;
     }
 }
 
@@ -228,6 +238,11 @@
             line-height: 50px;
         }
     }
+
+    .ad{
+        width: 300px;
+        height: 250px;
+    }
 }
 
 @media (min-width:$desktop){
@@ -303,6 +318,11 @@
             font-weight: 600;
             line-height: 50px;
         }
+    }
+
+    .ad{
+        width: 300px;
+        height: 250px;
     }
 }
 
