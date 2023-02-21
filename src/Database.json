@@ -222,5 +222,46 @@
             "½ tsp salt"
         ],
         "directions": "Cream the butter with sugar. Add the egg and bananas then mix well. Add flour, baking soda, and salt. Pour in a very greased Loaf pan. Bake at 350 deg for 1 hour."
+    },
+    {
+        "id": 13,
+        "title": "Pumpkin Bread",
+        "image": "https://i.postimg.cc/C1CxhDbr/Cake.jpg",
+        "tag":["dessert, holiday"],
+        "ingredients": [
+            "2 cups pumpkin",
+            "4 eggs",
+            "1 cup oil",
+            "⅔ cup water",
+            "3 cup sugar",
+            "3 ½ cup flour",
+            "½ tsp cloves",
+           "½ tsp nutmeg",
+            "½ tsp  baking powder",
+            "2 tsp baking soda",
+            "1 ½ tsp salt"
+        ],
+        "directions": "Mix together the pumpkin, eggs, oil and water. Add sugar. In a separate bowl, sift together remaining dry ingredients and slowly add to the wet mixture. Divide into two greased loaf pans (or four small loaf pans) and bake at 350 deg for 1 - 1 ½ hours."
+    },
+    {
+        "id": 14,
+        "title": "Pancit",
+        "image": "https://i.postimg.cc/C1CxhDbr/Cake.jpg",
+        "tag":["meal"],
+        "ingredients": [
+            "8 oz pancit Kanton Noodles (yellow)",
+            "8 oz Rice Stick Special Bihon",
+            "½ cup Silver Swan Soy Sauce",
+            "¼ cup Knorr Cablo Consabo de pollo",
+            "1 whole Roasted chicken",
+            "5 green onions",
+            "2 whole Carrots",
+            "4 cloves of garlic (Diced)",
+            "½ small Cabbage Head",
+            "½ lbs Fresh Green beans (snap off both ends)",
+            "2 ½ cups water"
+
+        ],
+        "directions": "Dice the Garlic and white ends of green onions. Shred the whole roasted chicken and set it aside. Cut all Veggies slanted and set them aside. No cabbage core. Burner on high. Saute garlic and white ends of the green onions in 2-3 tablespoons of vegetable oil until golden brown. Soak the rice stick for 15 min in warm water NEVER SOAK YELLOW BIHON NOODLES.Put the rest of cut up veggies in the pan to cook. Always Stir. Add 3 tablespoons of Sauce. Mix in ¼ chicken Bouillon powder. When veggies are done (Still crispy) set them aside. In the next Pan put in the juice from the veggies, to boil. Put the soaking Rice stick in a strainer. Add Rice Stick in boiling juice and stir until cooked. DO NOT LEAVE. Stir Always. Add Yellow noodles and stir until cooked. Set Noodles aside. Put the veggies and chicken mix back on. Stir the noodles in with the Veggies and chicken. Stir in completely. Salt and Pepper to taste. Garnish with chopped green onions."
     }
 ]
