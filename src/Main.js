@@ -6,15 +6,33 @@ import Footer from './Footer';
 import './Styles/Index.scss';
 import Sorted from './Sorted';
 
+import { initializeApp } from 'firebase/app';
+import { getFirestore } from 'firebase/firestore';
+
+
+const firebaseConfig = {
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
+};
+
+const app = initializeApp(firebaseConfig);
+
+
 class Main extends React.Component{
   constructor(props){
     super(props);
     this.state ={
+      data: [],
       cardTitle: 'No title',
       image:'',
       ingredients: [],
       directions: '',
-      path: ''
+      path: '',
     }
   }
 
@@ -33,14 +51,19 @@ class Main extends React.Component{
   pathHandler = (data) => {
     this.setState({path: data});
   }
+  getDataFromApp = (data) => {
+    this.setState({data: data});
+  }
 
   render(){
+
+    const db = getFirestore(app);
     return (
       <BrowserRouter>
         <Routes>
           <Route exact path='/' element={
           <div className='flow'>
-            <App title={this.getTitleFromApp} image={this.getImageFromApp} list={this.getListFromApp} directions={this.getDirectionsFromApp} path={this.pathHandler}/>
+            <App db={db} data={this.getDataFromApp} title={this.getTitleFromApp} image={this.getImageFromApp} list={this.getListFromApp} directions={this.getDirectionsFromApp} path={this.pathHandler}/>
             <Footer/>
           </div>}/>
 
@@ -53,7 +76,7 @@ class Main extends React.Component{
 
           <Route path='/sorted' element={
             <div className='flow'>
-              <Sorted title={this.getTitleFromApp} image={this.getImageFromApp} list={this.getListFromApp} directions={this.getDirectionsFromApp} path={this.state.path}/>
+              <Sorted  data={this.state.data} title={this.getTitleFromApp} image={this.getImageFromApp} list={this.getListFromApp} directions={this.getDirectionsFromApp} path={this.state.path}/>
               <Footer/>
             </div>
           }/>

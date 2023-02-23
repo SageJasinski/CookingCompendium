@@ -4,6 +4,7 @@ import { Card, Navbar, Nav, Container } from "react-bootstrap";
 import Logo from './images/logo.png';
 import './Styles/Sorted.scss';
 
+
 class Sorted extends React.Component{
     constructor(props){
         super(props);
@@ -20,9 +21,11 @@ class Sorted extends React.Component{
     }
 
     componentDidMount(){
-        const data = require('./Database.json');
-        data.sort((a,b) => {return a.title.localeCompare(b.title);});
+
+        const data = this.props.data;
         this.setState({data: data});
+
+        data.sort((a,b) => {return a.title.localeCompare(b.title);});
 
         this.setState({[this.props.path]: true});
 
@@ -34,8 +37,6 @@ class Sorted extends React.Component{
 
         const filtered2 = data.filter(item => item.tag && item.tag.includes('holiday'));
         this.setState({holidayData: filtered2});
-
-
     }
 
 
