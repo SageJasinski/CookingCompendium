@@ -1,0 +1,47 @@
+@import 'variables';
+
+@media(min-width: $desktop) {
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: $secondary-color;
+        border-radius: 20px;
+        padding: 30px;
+        margin: auto;
+        max-width: max-content;
+
+        .form-group{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: $offWhite;
+            font-weight: 600;
+            font-size: large;
+
+            input{
+                width: 40vw;
+                text-align: center;
+            }
+
+            button{
+                width: 10vw;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+            }
+        }
+
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+
+    }
+}

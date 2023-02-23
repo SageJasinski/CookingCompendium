@@ -8,6 +8,8 @@ import Sorted from './Sorted';
 
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
+import SignIn from './SignIn';
+import SignUp from './SignUp';
 
 
 const firebaseConfig = {
@@ -78,6 +80,18 @@ class Main extends React.Component{
             <div className='flow'>
               <Sorted  data={this.state.data} title={this.getTitleFromApp} image={this.getImageFromApp} list={this.getListFromApp} directions={this.getDirectionsFromApp} path={this.state.path}/>
               <Footer/>
+            </div>
+          }/>
+
+          <Route path='/signin' element={
+            <div className='flow'>
+              <SignIn/>
+            </div>
+          }/>
+
+          <Route path='/signup' element={
+            <div className='flow'>
+              <SignUp/>
             </div>
           }/>
 

@@ -44,6 +44,7 @@ body{
             color: $offWhite;
             text-decoration: none;
             font-family: Arial, Helvetica, sans-serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
     
         .nav-link:hover{
@@ -107,6 +108,32 @@ body{
         to{
             // transform: translateX(-100%);
             scroll-position:right bottom;
+        }
+    }
+
+    .sign-in{
+        display: flex;
+        justify-content: right;
+        margin: 30px 70px 0px;
+
+
+        .log-btn{
+            transition: all 0.5s;
+            padding:  10px 20px;
+            border-radius: 10px;
+            background-color: $secondary-color;
+            color: $offWhite;
+            text-decoration: none;
+            border:  3px solid $primary-color;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+        }
+
+        .log-btn:hover{
+            background-color: $highlight-color;
+            color: $secondary-color;
+            border: 3px solid $secondary-color;
+            text-shadow: 2px 2px 4px rgba(144, 134, 134, 0.5);
         }
     }
 }

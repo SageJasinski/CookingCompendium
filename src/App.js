@@ -1,12 +1,11 @@
 import './Styles/App.scss';
 import React from 'react';
 import Logo from './images/logo.png'
-import { Navbar, Nav, Container, Row, Col} from 'react-bootstrap';
+import { Navbar, Nav, Container, Row, Col, Button} from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Link} from 'react-router-dom';
 import { collection, getDocs, addDoc } from "firebase/firestore";
-
 
 
 
@@ -74,6 +73,9 @@ class App extends React.Component{
 
     return(
       <>
+      <div className='sign-in'>
+        <Link className='log-btn' to="/signin">Sign In</Link>
+      </div>
 
       <div className='Head'>
         <img className='logo' src={Logo}  alt='Logo of the company'/>
@@ -112,6 +114,8 @@ class App extends React.Component{
           ))}
         </Row>
       </Container>
+
+
 
       </>
     )
