@@ -6,7 +6,7 @@ import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Link} from 'react-router-dom';
 import { collection, getDocs, addDoc } from "firebase/firestore";
-import Main from './Main';
+
 
 
 
