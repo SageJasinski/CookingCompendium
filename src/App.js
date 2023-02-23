@@ -5,16 +5,51 @@ import { Navbar, Nav, Container, Row, Col} from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Link} from 'react-router-dom';
+import { collection, getDocs, addDoc } from "firebase/firestore";
+import Main from './Main';
+
+
 
 class App extends React.Component{
   state = {
-    data: []
+    data: [],
+    loading: true,
   }
 
   componentDidMount() {
-    const data = require('./Database.json');
-    this.setState({data})
     document.title = "Cooking Compendium";
+
+    this.firestoreDataFunction()
+    this.setState({loading: false});
+  }
+
+  firestoreDataFunction = async() => {
+    const db = this.props.db;
+    const querySnapshot = await getDocs(collection(db, "Recipes "));
+
+    if (querySnapshot.size === 0) {
+      console.error('No documents found.');
+    } else {
+      const data = querySnapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data(),
+      }))
+
+      this.setState({data: data})
+    }
+  }
+
+  uploadDataToFirestore = async(db, collectionName, jsonData) => {
+    const collectionRef = collection(db, collectionName);
+  
+    try {
+      for (const item of jsonData) {
+        const docRef = await addDoc(collectionRef, item);
+        console.log(`Document written with ID: ${docRef.id}`);
+      }
+    } catch (error) {
+      console.error("Error adding document: ", error);
+    }
   }
 
 
@@ -26,9 +61,17 @@ class App extends React.Component{
   }
   pathHandler= (path) =>{
     this.props.path(path);
+    this.props.data(this.state.data);
   }
 
+
   render(){
+    const {loading} = this.state;
+
+    if(loading) {
+      return <div>Loading ...</div>
+    }
+
     return(
       <>
 
@@ -74,5 +117,6 @@ class App extends React.Component{
     )
   }
 }
+
 
 export default App;
