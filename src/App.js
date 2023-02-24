@@ -18,8 +18,15 @@ class App extends React.Component{
   componentDidMount() {
     document.title = "Cooking Compendium";
 
-    this.firestoreDataFunction()
-    this.setState({loading: false});
+    const storeData = JSON.parse(localStorage.getItem('recipesData'));
+
+    if(storeData){
+      this.setState({data: storeData, loading:false});
+      console.log('reading loacal');
+    }else{
+      this.firestoreDataFunction()
+      console.log('reading Firebase')
+    }
   }
 
   firestoreDataFunction = async() => {
@@ -34,7 +41,8 @@ class App extends React.Component{
         ...doc.data(),
       }))
 
-      this.setState({data: data})
+      localStorage.setItem('recipesData', JSON.stringify(data));
+      this.setState({data: data, loading:false});
     }
   }
 

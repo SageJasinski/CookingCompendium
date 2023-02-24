@@ -27,7 +27,7 @@ body{
             position: absolute;
             height: 100px;
             width: auto;
-            margin-top: -170px;
+            margin-top: -260px;
         }
     
         h1{
@@ -102,11 +102,9 @@ body{
 
     @keyframes scroll {
         from{
-            // transform: translateX(0);
             scroll-position:left top;
         }
         to{
-            // transform: translateX(-100%);
             scroll-position:right bottom;
         }
     }
