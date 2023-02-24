@@ -13,6 +13,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.6.2",
     "react-scripts": "5.0.1",
+    "react-toastify": "^9.1.1",
     "react-window": "^1.8.8",
     "sass": "^1.57.1",
     "scss": "^0.2.4",

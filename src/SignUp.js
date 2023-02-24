@@ -1,7 +1,10 @@
 import React from "react";
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import './Styles/SignUp.scss';
+import 'react-toastify/dist/ReactToastify.css';
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 
 
 
@@ -34,7 +37,25 @@ class SignUp extends React.Component{
             this.setState({signInSuccessful: true})
         })
         .catch((error) => {
-            console.error(error);
+            const errorCode = error.code;
+            const errorMessage = error.message;
+
+            switch (errorCode){
+                case 'auth/email-already-in-use':
+                    toast.error('This Email is already in use');
+                    break;
+                case 'auth/invalid-email':
+                    toast.error('Invalid email address');
+                    break;
+                case 'auth/weak-password':
+                    toast.error('Password should be at least 6 characters long');
+                    break;
+                default:
+                    toast.error(errorMessage);
+                    break;
+            }
+
+            // console.log(error)
         });
     }
 
@@ -53,8 +74,9 @@ class SignUp extends React.Component{
         // const {email, password, username } = this.state;
         return(
             <>
-            <div className="container">
+            <ToastContainer/>
 
+            <div className="container">
                 { this.state.signInSuccessful === false && (
                     <form onSubmit={this.makeNewUser}>
 
