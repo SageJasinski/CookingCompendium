@@ -1,0 +1,76 @@
+@import 'variables';
+
+@media(min-width: $desktop) {
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: $secondary-color;
+        border-radius: 20px;
+        padding: 30px;
+        margin: auto;
+        max-width: max-content;
+
+        .form-group{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: $offWhite;
+            font-weight: 600;
+            font-size: large;
+
+            input{
+                width: 40vw;
+                text-align: center;
+            }
+
+            button{
+                width: 10vw;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+            }
+        }
+
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+
+        h2{
+            color: $offWhite;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .option{
+            display: flex;
+            justify-content: space-between;
+
+            a{transition: all 0.5s;
+                padding:  10px 20px;
+                border-radius: 10px;
+                background-color: $primary-color;
+                color: $offWhite;
+                text-decoration: none;
+                border:  3px solid $offWhite;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+                margin: 20px;
+            }
+
+            a:hover{
+                background-color: $highlight-color;
+                color: $secondary-color;
+                border: 3px solid $secondary-color-dark;
+                text-shadow: 2px 2px 4px rgba(144, 134, 134, 0.5);
+            }
+        }
+
+    }
+}

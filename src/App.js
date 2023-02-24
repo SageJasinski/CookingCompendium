@@ -5,8 +5,8 @@ import { Navbar, Nav, Container, Row, Col} from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Link} from 'react-router-dom';
-import { collection, getDocs, addDoc } from "firebase/firestore";
-
+import { collection, getDocs} from "firebase/firestore";
+import { getAuth} from 'firebase/auth';
 
 
 
@@ -14,13 +14,30 @@ class App extends React.Component{
   state = {
     data: [],
     loading: true,
+    user: null,
   }
 
   componentDidMount() {
     document.title = "Cooking Compendium";
 
-    this.firestoreDataFunction()
-    this.setState({loading: false});
+
+    const storeData = JSON.parse(localStorage.getItem('recipesData'));
+
+    if(storeData){
+      this.setState({data: storeData, loading:false});
+      console.log('reading loacal');
+    }else{
+      this.firestoreDataFunction()
+      console.log('reading Firebase')
+    }
+
+    getAuth().onAuthStateChanged((user) => {
+      if(user){
+        this.setState({ user });
+      }else{
+        this.setState({user: null});
+      }
+      });
   }
 
   firestoreDataFunction = async() => {
@@ -35,22 +52,12 @@ class App extends React.Component{
         ...doc.data(),
       }))
 
-      this.setState({data: data})
+      localStorage.setItem('recipesData', JSON.stringify(data));
+      this.setState({data: data, loading:false});
     }
   }
 
-  uploadDataToFirestore = async(db, collectionName, jsonData) => {
-    const collectionRef = collection(db, collectionName);
-  
-    try {
-      for (const item of jsonData) {
-        const docRef = await addDoc(collectionRef, item);
-        console.log(`Document written with ID: ${docRef.id}`);
-      }
-    } catch (error) {
-      console.error("Error adding document: ", error);
-    }
-  }
+
 
 
   handelOnClick = (data) =>{
@@ -64,9 +71,13 @@ class App extends React.Component{
     this.props.data(this.state.data);
   }
 
+  signout() {
+    getAuth().signOut();
+  }
+
 
   render(){
-    const {loading} = this.state;
+    const {loading, user} = this.state;
 
     if(loading) {
       return <div>Loading ...</div>
@@ -74,6 +85,20 @@ class App extends React.Component{
 
     return(
       <>
+
+      {user ? (
+        <div className='userBox'>
+          <div className='styleBox'>
+            <p className='welcome-message'>Welcome, {user.displayName}!</p>
+            <button className='logOut' onClick={this.signout}>Log out</button>
+          </div>
+        </div>
+      ):(
+        <div className='sign-in'>
+          <Link className='log-btn' to="/signin">Sign In</Link>
+        </div>
+      )}
+
 
       <div className='Head'>
         <img className='logo' src={Logo}  alt='Logo of the company'/>
@@ -112,6 +137,8 @@ class App extends React.Component{
           ))}
         </Row>
       </Container>
+
+
 
       </>
     )
