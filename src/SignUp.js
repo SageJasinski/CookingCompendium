@@ -1,6 +1,7 @@
 import React from "react";
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import './Styles/SignUp.scss';
+import { Link } from "react-router-dom";
 
 
 
@@ -30,6 +31,7 @@ class SignUp extends React.Component{
             updateProfile(user, {displayName: username})
 
             this.setState({ username: username || user})
+            this.setState({signInSuccessful: true})
         })
         .catch((error) => {
             console.error(error);
@@ -53,25 +55,38 @@ class SignUp extends React.Component{
             <>
             <div className="container">
 
-                <form onSubmit={this.makeNewUser}>
+                { this.state.signInSuccessful === false && (
+                    <form onSubmit={this.makeNewUser}>
 
-                    <div className="form-group">
-                        <label htmlFor="Email">Email address</label>
-                        <input type="email"  onChange={this.onEmailChange} className="form-control" id="Email"  placeholder="Enter Email"/>
-                    </div>
+                        <div className="form-group">
+                            <label htmlFor="Email">Email address</label>
+                            <input type="email"  onChange={this.onEmailChange} className="form-control" id="Email"  placeholder="Enter Email"/>
+                        </div>
 
-                    <div className="form-group">
-                        <label htmlFor="Username">Username</label>
-                        <input onChange={this.onUsernameChange} className="form-control" id="Username"  placeholder="Enter Username"/>
-                    </div>
+                        <div className="form-group">
+                            <label htmlFor="Username">Username</label>
+                            <input onChange={this.onUsernameChange} className="form-control" id="Username"  placeholder="Enter Username"/>
+                        </div>
 
-                    <div className="form-group">
-                        <label htmlFor="exampleInputPassword1">Password</label>
-                        <input type="password" onChange={this.onPasswordChange} className="form-control" id="exampleInputPassword1" placeholder="Password"/>
-                    </div>
+                        <div className="form-group">
+                            <label htmlFor="Password">Password</label>
+                            <input type="password" onChange={this.onPasswordChange} className="form-control" id="Password" placeholder="Password"/>
+                        </div>
 
-                    <button type="submit" className="btn btn-primary">Submit</button>
-                </form>
+                        <button type="submit" className="btn btn-primary">Submit</button>
+                    </form>
+                )}
+
+                {this.state.signInSuccessful && (
+                    <>
+                        <h2>Success! what would you like to do next?</h2>
+
+                        <div className="option">
+                            <Link className='home-btn' to="/">Home</Link>
+                            <Link className='profile-btn' to="/">Profile</Link>
+                        </div>
+                    </>
+                )}
             </div>
             </>
         )

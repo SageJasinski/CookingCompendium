@@ -134,6 +134,39 @@ body{
             text-shadow: 2px 2px 4px rgba(144, 134, 134, 0.5);
         }
     }
+
+    .userBox{
+        display: flex;
+        justify-content: right;
+
+        .styleBox{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 70px 0px;
+            color: $offWhite;
+            background-color: $primary-color;
+            border-radius: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border: solid 3px $secondary-color;
+            width: max-content;
+
+            button{
+                transition: all 0.5s;
+                border-radius: 20px;
+                background-color: $secondary-color;
+                color: $offWhite;
+                border: solid 3px $primary-color-dark;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+            button:hover{
+                background-color: $primary-color;
+                border: solid 3px $secondary-color;
+            }
+        }
+    }
 }
 
 @media (min-width:$tablet) and (max-width: $desktop){

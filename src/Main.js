@@ -5,9 +5,9 @@ import Recipe from './Recipe';
 import Footer from './Footer';
 import './Styles/Index.scss';
 import Sorted from './Sorted';
-
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
+import { getAuth } from 'firebase/auth';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
 
@@ -23,6 +23,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+// const auth = getAuth();
 
 
 class Main extends React.Component{

@@ -4,7 +4,7 @@
     .sign-up{
         display: flex;
         justify-content: center;
-        margin: 30px 70px 0px;
+        margin: 10px 20px;
 
 
         .log-btn{
@@ -24,6 +24,11 @@
             color: $secondary-color;
             border: 3px solid $secondary-color;
             text-shadow: 2px 2px 4px rgba(144, 134, 134, 0.5);
+        }
+
+        p{
+            color: $offWhite;
+            margin: 10px;
         }
     }
 }
