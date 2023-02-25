@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import './Styles/SignIn.scss';
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import 'react-toastify/dist/ReactToastify.css';
+import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
+import { toast, ToastContainer } from "react-toastify";
 
 
 
@@ -29,7 +31,24 @@ class SignIn extends React.Component{
             this.setState({signInSuccessful: true})
         })
         .catch((error) => {
-            console.error(error);
+            const errorCode = error.code;
+
+            switch (errorCode){
+                case 'auth/wrong-password':
+                    toast.error('Incorrect email or password');
+                    break;
+                case 'auth/user-not-found':
+                    toast.error('No user found');
+                    break;
+                case 'auth/too-many-requests':
+                    toast.error('To many failed attempts. Please reset your password or try again later.');
+                    break;
+                default:
+                    toast.error(error.message);
+                    break;
+            }
+
+            // console.error(error);
         });
     }
 
@@ -40,11 +59,24 @@ class SignIn extends React.Component{
         this.setState({password: event.target.value});
     }
 
+    resetPassword = async (event) => {
+        event.preventDefault();
+        const email = this.state.email;
+
+        await sendPasswordResetEmail(getAuth(), email).then(()=>{
+            alert('password reset email sent!');
+        }).catch((error) => {
+            console.error(error.message);
+        });
+    }
+
 
     render(){
 
         return(
         <>
+            <ToastContainer/>
+
             <div className="container">
                 {this.state.signInSuccessful ? (
                     <>
@@ -77,6 +109,7 @@ class SignIn extends React.Component{
                 <div className='sign-up'>
                     <p>Create an account</p>
                     <Link className='log-btn' to="/signup">Sign Up</Link>
+                    <button className="reset-password" onClick={this.resetPassword}>password reset</button>
                 </div>
             </div>
 

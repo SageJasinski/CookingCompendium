@@ -3,8 +3,7 @@ import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase
 import './Styles/SignUp.scss';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from "react-router-dom";
-import { toast } from "react-toastify";
-import { ToastContainer } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 
 
 
