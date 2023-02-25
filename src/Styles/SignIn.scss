@@ -30,6 +30,20 @@
             color: $offWhite;
             margin: 10px;
         }
+
+        .reset-password{
+            transition: all 0.5s;
+            background-color: $primary-color;
+            margin: 10px;
+            color: $offWhite;
+            border-radius: 5px;
+            border: solid 1px $offWhite;
+        }
+
+        .reset-password:active, .reset-password:hover{
+            background-color: $highlight-color;
+            color: black;
+        }
     }
 }
 
@@ -62,6 +76,20 @@
         p{
             color: $offWhite;
             margin: 10px;
+        }
+
+        .reset-password{
+            transition: all 0.5s;
+            background-color: $primary-color;
+            margin: 10px;
+            color: $offWhite;
+            border-radius: 5px;
+            border: solid 1px $offWhite;
+        }
+
+        .reset-password:active, .reset-password:hover{
+            background-color: $highlight-color;
+            color: black;
         }
     }
 }
@@ -96,6 +124,20 @@
             color: $offWhite;
             margin: 10px;
         }
+
+        .reset-password{
+            transition: all 0.5s;
+            background-color: $primary-color;
+            margin: 10px;
+            color: $offWhite;
+            border-radius: 5px;
+            border: solid 1px $offWhite;
+        }
+
+        .reset-password:active, .reset-password:hover{
+            background-color: $highlight-color;
+            color: black;
+        }
     }
 }
 
@@ -128,6 +170,20 @@
         p{
             color: $offWhite;
             margin: 10px;
+        }
+
+        .reset-password{
+            transition: all 0.5s;
+            background-color: $primary-color;
+            margin: 10px;
+            color: $offWhite;
+            border-radius: 5px;
+            border: solid 1px $offWhite;
+        }
+
+        .reset-password:active, .reset-password:hover{
+            background-color: $highlight-color;
+            color: black;
         }
     }
 }

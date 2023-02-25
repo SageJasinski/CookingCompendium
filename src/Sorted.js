@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Card, Navbar, Nav, Container } from "react-bootstrap";
+import { Card, Navbar, Nav} from "react-bootstrap";
 import Logo from './images/logo.png';
 import './Styles/Sorted.scss';
+import { getAuth } from "firebase/auth";
 
 
 class Sorted extends React.Component{
@@ -16,7 +17,8 @@ class Sorted extends React.Component{
             alphaSort: false,
             dessert: false,
             holiday: false,
-            meal:false
+            meal:false,
+            user: null
         }
     }
 
@@ -37,6 +39,14 @@ class Sorted extends React.Component{
 
         const filtered2 = data.filter(item => item.tag && item.tag.includes('holiday'));
         this.setState({holidayData: filtered2});
+
+        getAuth().onAuthStateChanged((user) => {
+            if(user){
+                this.setState({user});
+            }else{
+                this.setState({user: null});
+            }
+        });
     }
 
 
@@ -58,25 +68,44 @@ class Sorted extends React.Component{
         this.props.image(data.image);
         this.props.list(data.ingredients);
         this.props.directions(data.directions);
-      }
+    }
+
+    signout() {
+        getAuth().signOut();
+    }
 
     render(){
+        const {user} = this.state;
         return(
             <>
-            <div className='Head'>
+                {user ? (
+                    <div className='userBox'>
+                        <div className='styleBox'>
+                            <p className='welcome-message'>Welcome, {user.displayName}!</p>
+                            <button className='logOut' onClick={this.signout}>Log out</button>
+                        </div>
+                    </div>
+                    ):(
+                    <div className='sign-in'>
+                        <Link className='log-btn' to="/signin">Sign In</Link>
+                    </div>
+                )}
+
+                <div className='Head'>
+
 
                     <img className='logo' src={Logo}  alt='Logo of the company'/>
                     <h1>Cooking Compendium</h1>
 
                 <Navbar className='main-nav'>
-                <Container>
+                <div>
                     <Nav>
                     <p onClick={() => {this.mealHandler()}} className='nav-link'>Meal</p>
                     <p onClick={()=> {this.dessertHandler()}} className='nav-link'>Dessert</p>
                     <p onClick={() => {this.alphaHandler()}} className='nav-link'>A-Z</p>
                     <p onClick={() => {this.holidayHandler()}} className='nav-link'>Holiday</p>
                     </Nav>
-                </Container>
+                </div>
                 </Navbar>
             </div>
 

@@ -25,7 +25,7 @@ class App extends React.Component{
 
     if(storeData){
       this.setState({data: storeData, loading:false});
-      console.log('reading loacal');
+      console.log('reading local');
     }else{
       this.firestoreDataFunction()
       console.log('reading Firebase')
@@ -77,12 +77,7 @@ class App extends React.Component{
 
 
   render(){
-    const {loading, user} = this.state;
-
-    if(loading) {
-      return <div>Loading ...</div>
-    }
-
+    const {user} = this.state;
     return(
       <>
 
@@ -122,9 +117,9 @@ class App extends React.Component{
           {this.state.data.map(item => (
             <Col key={item.id} className="column">
 
-              <Link className='plain' to={{
-                pathname: '/recipe',
-              }}>
+              <Link className='plain' to={`/recipe/${item.id}`
+                // pathname: '/recipe',
+              }>
 
                 <Card onClick={() => {this.handelOnClick(item)}}>
                   <Card.Img src={item.image} />

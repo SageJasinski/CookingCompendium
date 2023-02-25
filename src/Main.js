@@ -71,9 +71,10 @@ class Main extends React.Component{
               <Footer/>
             </div>}/>
 
-            <Route path='/recipe' element={
+            <Route path='/recipe/:id' element={
               <div>
-                <Recipe title={this.state.cardTitle} image={this.state.image} ingredients={this.state.ingredients} directions={this.state.directions}/>
+                {/* <Recipe title={this.state.cardTitle} image={this.state.image} ingredients={this.state.ingredients} directions={this.state.directions}/> */}
+                <Recipe/>
                 <Footer/>
               </div>
             }/>
