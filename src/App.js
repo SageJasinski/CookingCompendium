@@ -105,14 +105,14 @@ class App extends React.Component{
         <h1>Cooking Compendium</h1>
 
         <Navbar className='main-nav'>
-          <Container>
+          <div className="nav-container">
             <Nav>
               <Link to="/sorted" onClick={() => {this.pathHandler('meal')}} className='nav-link'>Meal</Link>
               <Link to="/sorted" onClick={() => {this.pathHandler('dessert')}} className='nav-link'>Dessert</Link>
               <Link to="/sorted"  onClick={() => {this.pathHandler('alphaSort')}} className='nav-link'>A-Z</Link>
               <Link to="/sorted" onClick={() => {this.pathHandler('holiday')}} className='nav-link'>Holiday</Link>
             </Nav>
-          </Container>
+          </div>
         </Navbar>
       </div>
 
