@@ -118,9 +118,7 @@ class Sorted extends React.Component{
 
                 {this.state.holiday && this.state.holidayData.map(item => (
 
-                    <Link key={item.id} className='plain' to={{
-                        pathname: '/recipe',
-                    }}>
+                    <Link key={item.id} className='plain' to={`/recipe/${item.id}`}>
                         <Card   onClick={() => {this.handelOnClick(item)}}>
                         <Card.Img src={item.image} />
                         <Card.Body>
@@ -134,9 +132,7 @@ class Sorted extends React.Component{
 
                 {this.state.meal && this.state.mealData.map(item => (
 
-                    <Link key={item.id} className='plain' to={{
-                        pathname: '/recipe',
-                    }}>
+                    <Link key={item.id} className='plain' to={`/recipe/${item.id}`}>
                         <Card   onClick={() => {this.handelOnClick(item)}}>
                         <Card.Img src={item.image} />
                         <Card.Body>
@@ -150,9 +146,7 @@ class Sorted extends React.Component{
 
                 {this.state.dessert && this.state.dessertData.map(item => (
 
-                    <Link key={item.id} className='plain' to={{
-                        pathname: '/recipe',
-                    }}>
+                    <Link key={item.id} className='plain'to={`/recipe/${item.id}`}>
                         <Card   onClick={() => {this.handelOnClick(item)}}>
                         <Card.Img src={item.image} />
                         <Card.Body>
@@ -166,9 +160,7 @@ class Sorted extends React.Component{
 
                 {this.state.alphaSort && this.state.data.map(item => (
 
-                <Link key={item.id} className='plain' to={{
-                    pathname: '/recipe',
-                }}>
+                <Link key={item.id} className='plain' to={`/recipe/${item.id}`}>
                     <Card   onClick={() => {this.handelOnClick(item)}}>
                     <Card.Img src={item.image} />
                     <Card.Body>
