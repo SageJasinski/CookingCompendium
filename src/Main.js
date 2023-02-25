@@ -60,42 +60,46 @@ class Main extends React.Component{
 
     const db = getFirestore(app);
     return (
-      <BrowserRouter>
-        <Routes>
-          <Route exact path='/' element={
-          <div className='flow'>
-            <App db={db} data={this.getDataFromApp} title={this.getTitleFromApp} image={this.getImageFromApp} list={this.getListFromApp} directions={this.getDirectionsFromApp} path={this.pathHandler}/>
-            <Footer/>
-          </div>}/>
+      <>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5445071165173481" crossOrigin="anonymous"></script>
 
-          <Route path='/recipe' element={
-            <div>
-              <Recipe title={this.state.cardTitle} image={this.state.image} ingredients={this.state.ingredients} directions={this.state.directions}/>
+        <BrowserRouter>
+          <Routes>
+            <Route exact path='/' element={
+            <div className='flow'>
+              <App db={db} data={this.getDataFromApp} title={this.getTitleFromApp} image={this.getImageFromApp} list={this.getListFromApp} directions={this.getDirectionsFromApp} path={this.pathHandler}/>
               <Footer/>
-            </div>
-          }/>
+            </div>}/>
 
-          <Route path='/sorted' element={
-            <div className='flow'>
-              <Sorted  data={this.state.data} title={this.getTitleFromApp} image={this.getImageFromApp} list={this.getListFromApp} directions={this.getDirectionsFromApp} path={this.state.path}/>
-              <Footer/>
-            </div>
-          }/>
+            <Route path='/recipe' element={
+              <div>
+                <Recipe title={this.state.cardTitle} image={this.state.image} ingredients={this.state.ingredients} directions={this.state.directions}/>
+                <Footer/>
+              </div>
+            }/>
 
-          <Route path='/signin' element={
-            <div className='flow'>
-              <SignIn/>
-            </div>
-          }/>
+            <Route path='/sorted' element={
+              <div className='flow'>
+                <Sorted  data={this.state.data} title={this.getTitleFromApp} image={this.getImageFromApp} list={this.getListFromApp} directions={this.getDirectionsFromApp} path={this.state.path}/>
+                <Footer/>
+              </div>
+            }/>
 
-          <Route path='/signup' element={
-            <div className='flow'>
-              <SignUp/>
-            </div>
-          }/>
+            <Route path='/signin' element={
+              <div className='flow'>
+                <SignIn/>
+              </div>
+            }/>
 
-        </Routes>
-      </BrowserRouter>
+            <Route path='/signup' element={
+              <div className='flow'>
+                <SignUp/>
+              </div>
+            }/>
+
+          </Routes>
+        </BrowserRouter>
+      </>
     )
   }
 
