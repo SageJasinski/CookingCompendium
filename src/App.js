@@ -117,9 +117,7 @@ class App extends React.Component{
           {this.state.data.map(item => (
             <Col key={item.id} className="column">
 
-              <Link className='plain' to={`/recipe/${item.id}`
-                // pathname: '/recipe',
-              }>
+              <Link className='plain' to={`/recipe/${item.id}`}>
 
                 <Card onClick={() => {this.handelOnClick(item)}}>
                   <Card.Img src={item.image} />
@@ -133,7 +131,15 @@ class App extends React.Component{
         </Row>
       </Container>
 
-
+        <div className='about-box'>
+            <h2>What Is the Compendium?</h2>
+            <p>Welcome to the cooking compendium, where we take old, and new, family recipes and digitizes them on this site. We also offer comments under each recipe so that you can know of others success making the things you love. Here at CookingCompendium we are all about connecting people together through food they love. Some features coming soon are:</p>
+            <ul>
+              <li> Reaction to recipes and comments to find the yummiest of each category</li>
+              <li>A histories tab where you can see the original source for each recipe</li>
+              <li>A sharables tab where you can send your foodie pictures to other food minded individuals</li>
+            </ul>
+        </div>
 
       </>
     )
