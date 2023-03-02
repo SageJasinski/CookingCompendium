@@ -70,6 +70,7 @@ class App extends React.Component{
   pathHandler= (path) =>{
     this.props.path(path);
     this.props.data(this.state.data);
+    this.props.user(this.state.user);
   }
 
   signout() {

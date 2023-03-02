@@ -68,6 +68,7 @@ class Sorted extends React.Component{
         this.props.image(data.image);
         this.props.list(data.ingredients);
         this.props.directions(data.directions);
+        this.props.user(this.state.user);
     }
 
     signout() {
@@ -78,7 +79,7 @@ class Sorted extends React.Component{
         const {user} = this.state;
         return(
             <>
-                {user ? (
+                {user?.displayName ? (
                     <div className='userBox'>
                         <div className='styleBox'>
                             <p className='welcome-message'>Welcome, {user.displayName}!</p>
