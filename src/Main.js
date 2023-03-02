@@ -7,6 +7,7 @@ import './Styles/Index.scss';
 import Sorted from './Sorted';
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
+import { getDatabase } from 'firebase/database';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
 
@@ -18,7 +19,8 @@ const firebaseConfig = {
   storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
   messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
   appId: process.env.REACT_APP_FIREBASE_APP_ID,
-  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
+  databaseURL: process.env.REACT_APP_DATABASEURL,
 };
 
 const app = initializeApp(firebaseConfig);
@@ -34,6 +36,7 @@ class Main extends React.Component{
       ingredients: [],
       directions: '',
       path: '',
+      user: {},
     }
   }
 
@@ -55,10 +58,14 @@ class Main extends React.Component{
   getDataFromApp = (data) => {
     this.setState({data: data});
   }
+  getUserFromApp = (data) => {
+    this.setState({user: data})
+  }
 
   render(){
 
     const db = getFirestore(app);
+    const database = getDatabase(app);
     return (
       <>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5445071165173481" crossOrigin="anonymous"></script>
@@ -67,21 +74,20 @@ class Main extends React.Component{
           <Routes>
             <Route exact path='/' element={
             <div className='flow'>
-              <App db={db} data={this.getDataFromApp} title={this.getTitleFromApp} image={this.getImageFromApp} list={this.getListFromApp} directions={this.getDirectionsFromApp} path={this.pathHandler}/>
+              <App db={db} data={this.getDataFromApp} title={this.getTitleFromApp} image={this.getImageFromApp} list={this.getListFromApp} directions={this.getDirectionsFromApp} path={this.pathHandler} user={this.getUserFromApp}/>
               <Footer/>
             </div>}/>
 
             <Route path='/recipe/:id' element={
               <div>
-                {/* <Recipe title={this.state.cardTitle} image={this.state.image} ingredients={this.state.ingredients} directions={this.state.directions}/> */}
-                <Recipe/>
+                <Recipe database={database} user={this.state.user}/>
                 <Footer/>
               </div>
             }/>
 
             <Route path='/sorted' element={
               <div className='flow'>
-                <Sorted  data={this.state.data} title={this.getTitleFromApp} image={this.getImageFromApp} list={this.getListFromApp} directions={this.getDirectionsFromApp} path={this.state.path}/>
+                <Sorted  data={this.state.data} title={this.getTitleFromApp} image={this.getImageFromApp} list={this.getListFromApp} directions={this.getDirectionsFromApp} path={this.state.path} user={this.getUserFromApp}/>
                 <Footer/>
               </div>
             }/>

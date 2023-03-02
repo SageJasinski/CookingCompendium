@@ -173,9 +173,10 @@ body{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin:20px;
+        margin:20px 10vw;
         background-color: $offWhite;
         border-radius:10px;
+        border: solid 5px $primary-color;
         padding: 30px;
         h2{
             color: $secondary-color;
@@ -346,8 +347,9 @@ body{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin:20px;
+        margin:20px 10vw;
         background-color: $offWhite;
+        border: solid 5px $primary-color;
         border-radius:10px;
         padding: 30px;
         h2{
@@ -519,8 +521,9 @@ body{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin:20px;
+        margin:20px 10vw;
         background-color: $offWhite;
+        border: solid 5px $primary-color;
         border-radius:10px;
         padding: 30px;
         h2{
@@ -692,8 +695,9 @@ body{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin:20px;
+        margin:20px 10vw;
         background-color: $offWhite;
+        border: solid 5px $primary-color;
         border-radius:10px;
         padding: 30px;
         text-align: center;

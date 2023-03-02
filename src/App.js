@@ -65,6 +65,7 @@ class App extends React.Component{
     this.props.image(data.image);
     this.props.list(data.ingredients);
     this.props.directions(data.directions);
+    this.props.user(this.state.user);
   }
   pathHandler= (path) =>{
     this.props.path(path);
