@@ -539,3 +539,81 @@
     }
 }
 
+.print-btn{
+    margin: auto;
+    margin-top: 30px;
+    background-color: $secondary-color;
+    color: $offWhite;
+    border: solid 3px $offWhite;
+    border-radius: 20px;
+}
+
+@media print {
+    body {
+      font-size: 12pt;
+      line-height: 1.4;
+    }
+    button {
+      display: none;
+    }
+    a{
+        display: none;
+    }
+    .comment-section{
+        display: none;
+    }
+    .top{
+        h1, h2, h3 {
+            page-break-after: avoid;
+            page-break-after: avoid;
+            color: black;
+            border-radius: 5px;
+            font-weight: 600;
+            padding: 20px;
+            margin: 20px;
+            border: solid 5px $primary-color;
+            box-shadow: none;
+            text-shadow: none;
+
+        }
+        .list{
+            page-break-inside: avoid;
+            border-radius: 5px;
+            font-weight: 600;
+            padding: 20px;
+            margin: 20px;
+            border: solid 5px $primary-color;
+            width: 90vw;
+            columns: 2;
+            box-shadow: none;
+            text-shadow: none;
+        }
+
+        .food{
+            width: 30vw;
+            height: auto;
+            border: solid 5px $primary-color;
+            box-shadow: none;
+            text-shadow: none;
+        }
+        .directions{
+            page-break-inside: avoid;
+            border: solid 5px $primary-color;
+            color: black;
+            box-shadow: none;
+            text-shadow: none;
+            margin: 10px;
+        }
+    }
+
+
+    .contact{
+        display: none;
+    }
+
+    @page {
+        size: auto;
+        margin: 20px;
+    }
+}
+
