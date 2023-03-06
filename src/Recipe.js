@@ -91,6 +91,7 @@ function Recipe(props) {
         <h1>{recipe.title || "Recipe not found"}</h1>
         <Link to="/">Home</Link>
         <img  className="food" src={recipe.image} alt="Food from title"/>
+        <button  className="print-btn" onClick={window.print}>Print Recipe</button>
 
         <div className="list">
           <Form>
