@@ -83,6 +83,7 @@ class Sorted extends React.Component{
                     <div className='userBox'>
                         <div className='styleBox'>
                             <p className='welcome-message'>Welcome, {user.displayName}!</p>
+                            <Link className='profile-btn' to='/Profile'>Profile</Link>
                             <button className='logOut' onClick={this.signout}>Log out</button>
                         </div>
                     </div>
@@ -101,6 +102,7 @@ class Sorted extends React.Component{
                 <Navbar className='main-nav'>
                 <div>
                     <Nav>
+                    <Link className="nav-link" to='/'>Home Page</Link>
                     <p onClick={() => {this.mealHandler()}} className='nav-link'>Meal</p>
                     <p onClick={()=> {this.dessertHandler()}} className='nav-link'>Dessert</p>
                     <p onClick={() => {this.alphaHandler()}} className='nav-link'>A-Z</p>

@@ -156,13 +156,30 @@ body{
             button{
                 transition: all 0.5s;
                 border-radius: 20px;
+                margin:10px;
                 background-color: $secondary-color;
                 color: $offWhite;
                 border: solid 3px $primary-color-dark;
                 text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                padding: 5px 20px;
             }
             button:hover{
-                background-color: $primary-color;
+                background-color: $accent-color;
+                border: solid 3px $secondary-color;
+            }
+            a{
+                text-decoration: none;
+                transition: all 0.5s;
+                border-radius: 20px;
+                margin:10px;
+                background-color: $secondary-color;
+                color: $offWhite;
+                border: solid 3px $primary-color-dark;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                padding: 5px 20px;
+            }
+            a:hover{
+                background-color: $accent-color;
                 border: solid 3px $secondary-color;
             }
         }
