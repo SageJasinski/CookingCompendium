@@ -10,6 +10,7 @@ import { getFirestore } from 'firebase/firestore';
 import { getDatabase } from 'firebase/database';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
+import Profile from './Profile';
 
 
 const firebaseConfig = {
@@ -101,6 +102,12 @@ class Main extends React.Component{
             <Route path='/signup' element={
               <div className='flow'>
                 <SignUp/>
+              </div>
+            }/>
+
+            <Route path='/Profile' element={
+              <div className='flow'>
+                <Profile/>
               </div>
             }/>
 

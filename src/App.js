@@ -25,10 +25,10 @@ class App extends React.Component{
 
     if(storeData){
       this.setState({data: storeData, loading:false});
-      console.log('reading local');
+      // console.log('reading local');
     }else{
       this.firestoreDataFunction()
-      console.log('reading Firebase')
+      // console.log('reading Firebase')
     }
 
     getAuth().onAuthStateChanged((user) => {
@@ -45,7 +45,7 @@ class App extends React.Component{
     const querySnapshot = await getDocs(collection(db, "Recipes "));
 
     if (querySnapshot.size === 0) {
-      console.error('No documents found.');
+      // console.error('No documents found.');
     } else {
       const data = querySnapshot.docs.map(doc => ({
         id: doc.id,
@@ -87,6 +87,7 @@ class App extends React.Component{
         <div className='userBox'>
           <div className='styleBox'>
             <p className='welcome-message'>Welcome, {user.displayName}!</p>
+            <Link className='profile-btn' to='/Profile'>Profile</Link>
             <button className='logOut' onClick={this.signout}>Log out</button>
           </div>
         </div>

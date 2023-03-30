@@ -84,7 +84,7 @@ class SignIn extends React.Component{
 
                     <div className="option">
                         <Link className='home-btn' to="/">Home</Link>
-                        <Link className='profile-btn' to="/">Profile</Link>
+                        <Link className='profile-btn' to="/Profile">Profile</Link>
                     </div>
                     </>
                 ) : (
