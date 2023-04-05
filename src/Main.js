@@ -11,6 +11,7 @@ import { getDatabase } from 'firebase/database';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
 import Profile from './Profile';
+import Feed from './Social/Feed';
 
 
 const firebaseConfig = {
@@ -25,6 +26,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+
 
 
 class Main extends React.Component{
@@ -67,6 +69,7 @@ class Main extends React.Component{
 
     const db = getFirestore(app);
     const database = getDatabase(app);
+    // const storage = getStorage();
     return (
       <>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5445071165173481" crossOrigin="anonymous"></script>
@@ -107,9 +110,15 @@ class Main extends React.Component{
 
             <Route path='/Profile' element={
               <div className='flow'>
-                <Profile/>
+                <Profile />
               </div>
             }/>
+
+            <Route path='/Feed' element={
+              <div className='flow'>
+                <Feed user={this.state.user} db={db}/>
+              </div>
+            }></Route>
 
           </Routes>
         </BrowserRouter>

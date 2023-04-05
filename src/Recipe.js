@@ -125,6 +125,8 @@ function Recipe(props) {
         </form>)
       }
 
+      {comments? (<div className="card"> <p className="card-body"> There seem to be no comments here. Be the first to contribute!</p> </div>) : (<></>)}
+
 
        {comments.map((comment) => (
           <div className="card" key={comment.id}>

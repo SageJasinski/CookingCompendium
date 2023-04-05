@@ -1,0 +1,55 @@
+@import './variables.scss';
+
+body{
+    background: linear-gradient(to bottom right, $gradient-colors);
+}
+h1{
+    width: 100vw;
+    margin: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: $offWhite;
+    background-color: $primary-color;
+    border-radius: 0px 0px 40px 40px;
+    text-align: center;
+    padding: 20px;
+
+}
+
+a{
+    margin-left: 50px;
+    color: $secondary-color;
+    background-color: $offWhite;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+    text-decoration: none;
+    width: max-content;
+}
+
+.head-bar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    // background-color: $accent-color;
+    padding: 10px;
+
+    .user-prof-section{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 30px;
+        color: $offWhite;
+        font-size: 14px;
+    }
+
+    .post{
+        margin: auto;
+        width: 500px;
+        text-align: center;
+        color: $offWhite;
+        font-size: 20px;
+        font-weight: 600;
+    }
+}
