@@ -1,10 +1,10 @@
 import { getAuth } from "firebase/auth";
 import React from "react";
-import { Card, Col, Form, Image } from "react-bootstrap";
+import { Card, Form} from "react-bootstrap";
 import { ref, uploadBytes, getStorage, getDownloadURL} from 'firebase/storage';
-import { addDoc, collection, getDocs, QuerySnapshot, serverTimestamp, Timestamp} from 'firebase/firestore';
+import { addDoc, collection, getDocs,  serverTimestamp} from 'firebase/firestore';
 import { Link } from "react-router-dom";
-import '../Styles/Feed.scss';
+import './Feed.scss';
 
 
 
@@ -62,17 +62,15 @@ class Feed extends React.Component {
         const storage = getStorage();
         const db = this.props.db;
 
-        const storageRefrence = ref(storage, this.state.selectedFile.name);
-        const reader = new FileReader();
+        const now = new Date();
+        const filename = `${this.state.user.displayName}_${now.getTime()}_${this.state.selectedFile.name}`
+        const storageRefrence = ref(storage, filename);
 
-        reader.readAsArrayBuffer(this.state.selectedFile);
+        await uploadBytes(storageRefrence, this.state.selectedFile);
 
-        const buffer = reader.result;
-        const snapshot = await uploadBytes(storageRefrence, buffer);
+        const imageURL = await getDownloadURL(storageRefrence);
 
-        const imageURL = await getDownloadURL(snapshot.ref);
-
-        const docRef = await addDoc(collection(db, "Posts"),  {
+        await addDoc(collection(db, "Posts"),  {
             authorName: this.state.user.displayName,
             authorID: this.state.user.uid,
             created: serverTimestamp(),
@@ -84,8 +82,6 @@ class Feed extends React.Component {
         })
 
         this.setState({selectedFile: null, showPost:false, postText: ""})
-        console.log(this.state.yourFeed)
-
     }
 
     updatePost = async(event) => {
@@ -98,11 +94,17 @@ class Feed extends React.Component {
         return(
             <>
 
-            <h1>CookingCompendium: the Feed</h1>
-            <Link to='/'> {"<- Back to Recipes"} </Link>
+            <h1 className="feed_heading">CookingCompendium: the Feed</h1>
+            <Link className="feed_back_btn" to='/'> {"<- Back to Recipes"} </Link>
 
             {user ? (
                 <>
+                <div className="user-prof-section">
+
+                    {this.state.user.photoURL ? (<img className="user_profile_picture" src={this.state.user.photoURL} alt="your-profile"/>):(<div className="user_profile_picture"></div>)}
+                    <p className="user-name">{user.displayName}</p>
+                </div>
+
                 <div className="head-bar">
 
                     <div className="post">
@@ -115,6 +117,7 @@ class Feed extends React.Component {
                             {showPost && (
                                 <>
                                     <Form.Group>
+                                        {/* <label htmlFor="picture" className="fileUploader">Choose a picture</label> */}
                                         <input type="file" id="picture" label="Upload" onChange={this.handelFileChange}/>
                                     </Form.Group>
                                     <button type="submit">Post</button>
@@ -123,9 +126,6 @@ class Feed extends React.Component {
                         </Form>
                     </div>
 
-                    <div className="user-prof-section">
-                        <p className="user-name">{user.displayName}</p>
-                    </div>
 
                 </div>
 
@@ -134,18 +134,27 @@ class Feed extends React.Component {
                 <div className="scroll_feed">
 
                     {this.state.yourFeed.map(item => (
-                    <Card key={item.id}>
-                        <Card.Img variant="top" src={item.ImageURL} alt="Post-image" />
-                        <image src={item.ImageURL}/>
-                        <Card.Subtitle>{item.authorName}</Card.Subtitle>
-                        <Card.Body>{item.postText}</Card.Body>
-                        <Card.Footer>comments ...</Card.Footer>
-                    </Card>
+                        <Card key={item.id}>
+                            <Card.Img className="feed_pic" variant="top" src={item.ImageURL} alt="Post-image" />
+                            <div className="post_sub_info">
+                            <Card.Subtitle className="post_username">{item.authorName}</Card.Subtitle>
+                            <Card.Subtitle className="post_date">{item.created.toDate().toLocaleDateString()}</Card.Subtitle>
+                            </div>
+                            <Card.Body>{item.postText}</Card.Body>
+                            <Card.Footer>comments ...</Card.Footer>
+                        </Card>
                     ))}
 
                 </div>
             </>
-            ):(<><p>No user logged in</p></>)}
+            ):(
+            <>
+            <div className="feed_log_prompt">
+                <p>No user logged in. Please sign in or sign up to view your feed</p>
+                <Link className='log-btn' to="/signin">Sign In</Link>
+            </div>
+
+            </>)}
             </>
         )
     }

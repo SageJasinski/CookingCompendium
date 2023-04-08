@@ -12,6 +12,7 @@ import SignIn from './SignIn';
 import SignUp from './SignUp';
 import Profile from './Profile';
 import Feed from './Social/Feed';
+import Policy from './Policy';
 
 
 const firebaseConfig = {
@@ -119,6 +120,13 @@ class Main extends React.Component{
                 <Feed user={this.state.user} db={db}/>
               </div>
             }></Route>
+
+            <Route path='/policy' element={
+              <div className='flow'>
+                  <Policy/>
+                  <Footer/>
+              </div>
+            }/>
 
           </Routes>
         </BrowserRouter>

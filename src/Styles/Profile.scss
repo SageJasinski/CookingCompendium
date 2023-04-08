@@ -45,6 +45,18 @@
             border: 3px solid $secondary-color;
             text-shadow: 2px 2px 4px rgba(144, 134, 134, 0.5);
         }
+
+        .profile-picture{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            height: 100px;
+            clip-path: circle(30% at center);
+            margin: auto;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
     }
 
     .user-home-btn{

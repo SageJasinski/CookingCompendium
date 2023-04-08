@@ -21,10 +21,11 @@
             margin: 10px;
         }
 
+
+
         form{
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
             color: $offWhite;
             font-weight: 600;
@@ -38,6 +39,12 @@
             button{
                 width: 10vw;
                 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+            }
+
+            .terms{
+               a{
+                margin: 0;
+               }
             }
         }
 

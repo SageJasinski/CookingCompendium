@@ -25,10 +25,8 @@ class App extends React.Component{
 
     if(storeData){
       this.setState({data: storeData, loading:false});
-      // console.log('reading local');
     }else{
       this.firestoreDataFunction()
-      // console.log('reading Firebase')
     }
 
     getAuth().onAuthStateChanged((user) => {

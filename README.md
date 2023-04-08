@@ -7,7 +7,7 @@ some features comming soon are:
 - comments under each recipie
 - user feed back to the comments and recipies in the form of reactions
 
-**please visit the site at [cookingcompendium.com](http://www.cookingcompendium.com)** 
+**please visit the site at [cookingcompendium.com](http://www.cookingcompendium.com)**
 
 ## Current version
 
