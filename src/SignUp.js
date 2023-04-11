@@ -96,7 +96,7 @@ class SignUp extends React.Component{
 
                         <div >
                             <label className="terms">
-                                <input type="checkbox" name="terms_and_conditions" required/>
+                                <input type="checkbox" name="terms_and_conditions" required={true}/>
                                 I agree to the <Link to="/policy" target="_blank">terms and conditions</Link>
                             </label>
                         </div>

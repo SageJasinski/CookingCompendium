@@ -2,21 +2,30 @@ import { getAuth } from "firebase/auth";
 import React from "react";
 import { Card, Form} from "react-bootstrap";
 import { ref, uploadBytes, getStorage, getDownloadURL} from 'firebase/storage';
-import { addDoc, collection, getDocs,  serverTimestamp} from 'firebase/firestore';
+import { addDoc, collection, getDocs,  serverTimestamp, doc, updateDoc, increment, getDoc} from 'firebase/firestore';
+import { getDatabase, update } from "firebase/database";
 import { Link } from "react-router-dom";
+import Yum from '../images/greyed-out-yum.png';
+import YumColor from '../images/full-color-yum.png';
 import './Feed.scss';
 
+const dbRealtime = getDatabase();
 
 
 class Feed extends React.Component {
-    state = {
-        user: null,
-        showPost: false,
-        selectedFile: null,
-        storageRef: null,
-        postText: "",
-        yourFeed: [],
+    constructor(props){
+        super(props);
+        this.state = {
+            user: null,
+            showPost: false,
+            selectedFile: null,
+            storageRef: null,
+            postText: "",
+            yourFeed: [],
+            post: null,
+        };
     }
+
 
 
     componentDidMount(){
@@ -81,6 +90,7 @@ class Feed extends React.Component {
             ImageURL: imageURL
         })
 
+
         this.setState({selectedFile: null, showPost:false, postText: ""})
     }
 
@@ -89,12 +99,55 @@ class Feed extends React.Component {
         this.setState({postText: event.target.value});
     }
 
+    handleYumClick = async(postId) =>{
+        try{
+            const db = this.props.db;
+            const postref = doc(db,"Posts", postId);
+            const docSnapShot = await getDoc(postref);
+
+
+            if(docSnapShot.exists()){
+                const post = docSnapShot.data();
+
+                if(post.reactions && post.reactions[this.state.user.uid] === "yum"){
+                    await updateDoc(postref, {
+                        likesCount: increment(-1),
+                        reactions:{
+                            [this.state.user.uid]: "",
+                        }
+                    });
+
+                    update(ref(dbRealtime, `Posts/${postId}/reactionCount`), {
+                        yum: increment(-1)
+                    });
+
+                }else{
+                    await updateDoc(postref, {
+                        likesCount: increment(1),
+                        reactions: {
+                            [this.state.user.uid]:"yum",
+                        }
+                    });
+
+                    update(ref(dbRealtime, `Posts/${postId}/reactionCount`), {
+                        yum: increment(1)
+                    });
+                }
+            }
+        } catch(error){
+            console.log(error);
+        }
+
+
+    }
+
     render(){
         const {user, showPost} = this.state
         return(
             <>
 
-            <h1 className="feed_heading">CookingCompendium: the Feed</h1>
+            <h1 className="feed_heading">CookingCompendium: the Feed <sub>*alpha</sub></h1>
+
             <Link className="feed_back_btn" to='/'> {"<- Back to Recipes"} </Link>
 
             {user ? (
@@ -117,8 +170,7 @@ class Feed extends React.Component {
                             {showPost && (
                                 <>
                                     <Form.Group>
-                                        {/* <label htmlFor="picture" className="fileUploader">Choose a picture</label> */}
-                                        <input type="file" id="picture" label="Upload" onChange={this.handelFileChange}/>
+                                        <input  required={true} type="file" id="picture" label="Upload" onChange={this.handelFileChange}/>
                                     </Form.Group>
                                     <button type="submit">Post</button>
                                 </>
@@ -136,6 +188,10 @@ class Feed extends React.Component {
                     {this.state.yourFeed.map(item => (
                         <Card key={item.id}>
                             <Card.Img className="feed_pic" variant="top" src={item.ImageURL} alt="Post-image" />
+                            <div className="reaction_center">
+                                {item.reactions[this.state.user.uid] === "yum" ? (<img src={YumColor} className="yum_reaction_btn" alt="already-reacted-yum" onClick={() => this.handleYumClick(item.id)}/>):(<img src={Yum} className="yum_reaction_btn" alt="yum reaction button" onClick={() => this.handleYumClick(item.id)}/>)}
+                                <p className="yum_count">{item.likesCount}</p>
+                            </div>
                             <div className="post_sub_info">
                             <Card.Subtitle className="post_username">{item.authorName}</Card.Subtitle>
                             <Card.Subtitle className="post_date">{item.created.toDate().toLocaleDateString()}</Card.Subtitle>

@@ -113,23 +113,24 @@
             color: $offWhite;
         }
     }
-    .card{
-        text-align: center;
-        width: 90vw;
-        margin: auto;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        background-color: $secondary-color;
-        // color: $offWhite;
+
+    .comment-section{
+        .card{
+            text-align: center;
+            width: 90vw;
+            background-color: $secondary-color;
 
 
-        .card-body{
-            font-size: large;
-        }
-        .card-footer{
-            font-size: small;
+            .card-body{
+                font-size: large;
+            }
+            .card-footer{
+                font-size: small;
+            }
         }
     }
+
+
 }
 
 @media (min-width:$phone) and (max-width:$tablet){
@@ -178,6 +179,7 @@
             border-radius: 10px;
             border: solid 5px $offWhite;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    
         }
     
         .list{
@@ -215,7 +217,7 @@
         justify-content: center;
         align-items: center;
         background-color: $primary-color;
-        width: 60vw;
+        width: 90vw;
         margin: auto;
         margin-bottom: 20px;
         padding: 20px;
@@ -225,14 +227,14 @@
         input{
             border-radius: 10px;
             border: none;
-            width: 50vw;
+            width: 80vw;
             padding: 5px;
             margin-bottom: 10px;
 
         }
 
         button{
-            width: 10vw;
+            width: 30vw;
             border-radius: 10px;
             background-color: $secondary-color;
             color: $offWhite;
@@ -242,24 +244,22 @@
         button:hover {
             background-color: $accent-color;
             color: $offWhite;
-
         }
     }
-    .card{
-        text-align: center;
-        width: 50vw;
-        margin: auto;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        background-color: $secondary-color;
-        // color: $offWhite;
+
+    .comment-section{
+        .card{
+            text-align: center;
+            width: 90vw;
+            background-color: $secondary-color;
 
 
-        .card-body{
-            font-size: large;
-        }
-        .card-footer{
-            font-size: small;
+            .card-body{
+                font-size: large;
+            }
+            .card-footer{
+                font-size: small;
+            }
         }
     }
 }

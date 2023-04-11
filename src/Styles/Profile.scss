@@ -115,3 +115,274 @@
         }
     }
 }
+@media (min-width:$tablet) and (max-width: $desktop){}
+
+@media (min-width:$phone) and (max-width:$tablet){
+    .user-profile{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+
+        width: 90vw;
+        padding: 30px;
+
+        background-color: $secondary-color;
+        border-radius: 10px;
+        border: solid 6px $primary-color;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+
+        .displayname{
+            font-size: 50px;
+            color: $offWhite;
+            background-color: $accent-color;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .user-email{
+            font-size: 20px;
+        }
+
+        .logOut{
+            transition: all 0.5s;
+            padding:  10px 20px;
+            border-radius: 10px;
+            background-color: $secondary-color;
+            color: $offWhite;
+            text-decoration: none;
+            border:  3px solid $primary-color;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+        }
+        .logOut:hover{
+            background-color: $highlight-color;
+            color: $secondary-color;
+            border: 3px solid $secondary-color;
+            text-shadow: 2px 2px 4px rgba(144, 134, 134, 0.5);
+        }
+
+        .profile-picture{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            height: 100px;
+            clip-path: circle(30% at center);
+            margin: auto;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+    }
+
+    .user-home-btn{
+       text-align: center;
+       text-decoration: none;
+       margin: auto;
+       margin-top: 20px;
+       margin-bottom: 30px;
+       font-size: 20px;
+
+        width: 40vw;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: $secondary-color;
+        color: $offWhite;
+        border: 3px solid $offWhite;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    }
+    .user-home-btn:hover{
+        background-color: $accent-color;
+        color: $offWhite;
+    }
+
+    .no-log{
+        .profile-no-log{
+            font-size: 30px;
+            margin: auto;
+            text-align: center;
+            background-color: $offWhite;
+            width: 90vw;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+        }
+        .sign-in-btn{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            text-decoration: none;
+            margin: auto;
+            margin-top: 20px;
+            font-size: 20px;
+            padding: 10px;
+     
+             width: 50vw;
+             border-radius: 10px;
+             background-color: $secondary-color;
+             color: $offWhite;
+             border: 3px solid $offWhite;
+             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+        }
+        .sign-in-btn:hover{
+            background-color: $accent-color;
+            color: $offWhite;
+        }
+    }
+}
+
+@media(max-width: $phone){
+    .user-profile{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+
+        width: 90vw;
+        padding: 30px;
+
+        background-color: $secondary-color;
+        border-radius: 10px;
+        border: solid 6px $primary-color;
+        border-top-color: lighten($primary-color, 10%);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+
+        .displayname{
+            font-size: 50px;
+            color: $offWhite;
+            background-color: $accent-color;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: $inner-shadow;
+        }
+
+        .user-email{
+            font-size: 20px;
+            background-color: $darken-background;
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .logOut{
+            transition: all 0.5s;
+            padding:  10px 20px;
+            border-radius: 10px;
+            background-color: $secondary-color;
+            color: $offWhite;
+            text-decoration: none;
+            border:  3px solid $primary-color;
+            border-top-color: lighten($primary-color, 10%);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+        }
+        .logOut:hover{
+            background-color: $highlight-color;
+            color: $secondary-color;
+            border: 3px solid $secondary-color;
+            text-shadow: 2px 2px 4px rgba(144, 134, 134, 0.5);
+        }
+
+        .file_upload_group{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: $darken-background;
+            width: 80vw;
+            border-radius: 10px;
+            padding: 10px;
+
+            button{
+                margin-top: 10px;
+                background-color: $primary-color;
+                color: $offWhite;
+                border-radius: 10px;
+                border: solid 2px $accent-color;
+                border-top-color: lighten($accent-color, 10%);
+            }
+            input{
+                width: 70vw;
+            }
+
+
+        }
+
+
+
+
+        .profile-picture{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            height: 100px;
+            clip-path: circle(40px at center);
+            margin: auto;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+    }
+
+    .user-home-btn{
+       text-align: center;
+       text-decoration: none;
+       margin: auto;
+       margin-top: 20px;
+       margin-bottom: 30px;
+       font-size: 20px;
+
+        width: 40vw;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: $secondary-color;
+        color: $offWhite;
+        border: 3px solid $offWhite;
+        border-top-color: lighten($offWhite, 10%);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    }
+    .user-home-btn:hover{
+        background-color: $accent-color;
+        color: $offWhite;
+    }
+
+    .no-log{
+        .profile-no-log{
+            font-size: 30px;
+            margin: auto;
+            text-align: center;
+            background-color: $offWhite;
+            width: 90vw;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+        }
+        .sign-in-btn{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            text-decoration: none;
+            margin: auto;
+            margin-top: 20px;
+            font-size: 20px;
+            padding: 10px;
+     
+             width: 50vw;
+             border-radius: 10px;
+             background-color: $secondary-color;
+             color: $offWhite;
+             border: 3px solid $offWhite;
+             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+        }
+        .sign-in-btn:hover{
+            background-color: $accent-color;
+            color: $offWhite;
+        }
+    }
+}

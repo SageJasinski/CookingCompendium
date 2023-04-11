@@ -54,7 +54,7 @@ class Profile extends React.Component{
     };
 
 
-    signout() {
+    signOut() {
         getAuth().signOut();
     }
 
@@ -71,14 +71,16 @@ class Profile extends React.Component{
                             <div>
 
                                 <Form onSubmit={this.handleProfilePictureChange}>
-                                    <Form.Group>
-                                        <input type="file" accept="image/*" onChange={this.pictureStateChange}/>
+                                    <Form.Group className="file_upload_group">
+
+                                        <input type="file" accept="image/*"  required={true} onChange={this.pictureStateChange}/>
+
                                         <button type='submit'>Update picture</button>
                                     </Form.Group>
                                 </Form>
                              <img  className="profile-picture" src={this.state.user.photoURL} alt="Profile" />
                             </div>
-                        <button className="logOut" onClick={this.signout}>Log Out</button>
+                        <button className="logOut" onClick={this.signOut}>Log Out</button>
                     </div>
                 ):(
                     <div className="no-log">

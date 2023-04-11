@@ -42,7 +42,7 @@ function Recipe(props) {
         })
         setComments(commentsArray);
       }else {
-        console.log("No data available");
+        // console.log("No data available");
       }
 
       if(passedUser){
