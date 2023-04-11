@@ -70,7 +70,6 @@ class Main extends React.Component{
 
     const db = getFirestore(app);
     const database = getDatabase(app);
-    // const storage = getStorage();
     return (
       <>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5445071165173481" crossOrigin="anonymous"></script>

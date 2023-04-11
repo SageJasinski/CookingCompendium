@@ -3,13 +3,11 @@ import React from "react";
 import { Card, Form} from "react-bootstrap";
 import { ref, uploadBytes, getStorage, getDownloadURL} from 'firebase/storage';
 import { addDoc, collection, getDocs,  serverTimestamp, doc, updateDoc, increment, getDoc} from 'firebase/firestore';
-import { getDatabase, update } from "firebase/database";
 import { Link } from "react-router-dom";
 import Yum from '../images/greyed-out-yum.png';
 import YumColor from '../images/full-color-yum.png';
 import './Feed.scss';
 
-const dbRealtime = getDatabase();
 
 
 class Feed extends React.Component {
@@ -22,7 +20,6 @@ class Feed extends React.Component {
             storageRef: null,
             postText: "",
             yourFeed: [],
-            post: null,
         };
     }
 
@@ -117,9 +114,6 @@ class Feed extends React.Component {
                         }
                     });
 
-                    update(ref(dbRealtime, `Posts/${postId}/reactionCount`), {
-                        yum: increment(-1)
-                    });
 
                 }else{
                     await updateDoc(postref, {
@@ -127,10 +121,6 @@ class Feed extends React.Component {
                         reactions: {
                             [this.state.user.uid]:"yum",
                         }
-                    });
-
-                    update(ref(dbRealtime, `Posts/${postId}/reactionCount`), {
-                        yum: increment(1)
                     });
                 }
             }
