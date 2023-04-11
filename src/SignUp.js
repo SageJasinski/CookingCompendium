@@ -94,6 +94,15 @@ class SignUp extends React.Component{
                             <input type="password" onChange={this.onPasswordChange} className="form-control" id="Password" placeholder="Password"/>
                         </div>
 
+                        <div >
+                            <label className="terms">
+                                <input type="checkbox" name="terms_and_conditions" required={true}/>
+                                I agree to the <Link to="/policy" target="_blank">terms and conditions</Link>
+                            </label>
+                        </div>
+
+
+
                         <button type="submit" className="btn btn-primary">Submit</button>
                     </form>
                 )}

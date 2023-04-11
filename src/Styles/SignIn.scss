@@ -145,16 +145,20 @@
     .sign-up{
         display: flex;
         justify-content: center;
+        align-items: center;
         margin: 10px 20px;
+        // width: 50vw;
 
 
         .log-btn{
             transition: all 0.5s;
             padding:  10px 20px;
             border-radius: 10px;
+            width: 30vw;
             background-color: $secondary-color;
             color: $offWhite;
             text-decoration: none;
+            text-align: center;
             border:  3px solid $primary-color;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
@@ -170,6 +174,9 @@
         p{
             color: $offWhite;
             margin: 10px;
+            text-align: center;
+            width: 30vw;
+            font-size: small;
         }
 
         .reset-password{
@@ -179,6 +186,8 @@
             color: $offWhite;
             border-radius: 5px;
             border: solid 1px $offWhite;
+            width: 30vw;
+            font-size: small;
         }
 
         .reset-password:active, .reset-password:hover{

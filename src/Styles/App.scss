@@ -1,11 +1,11 @@
 @import "variables";
 
 body{
-    margin: auto;
-    background-image: url('../images/background-one.png');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    // margin: auto;
+    // background-image: url('../images/background-one.png');
+    // background-position: center;
+    // background-size: cover;
+    // background-repeat: no-repeat;
     backdrop-filter: brightness(0.7);
 }
 
@@ -387,8 +387,8 @@ body{
         margin-top: 100px;
         border-radius: 20px;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-    
-    
+
+
         .logo {
             position: absolute;
             height: 100px;
@@ -441,26 +441,32 @@ body{
         }
     
         .card {
-            margin: 30px;
-            max-width: 200px;
+            margin: 20px;
+            width: 200px;
             height: 350px;
             display: flex;
             justify-content: center;
             align-items: center;
             background-color: $offWhite;
             color: $accent-color;
+            text-align: center;
     
             .card-img{
                 margin: 10px;
+                // margin: auto;
                 width: 180px;
                 height: auto;
+            }
+
+            .card-body{
+                width: 200px;
             }
         }
         .overflow-auto{
             flex-wrap: nowrap;
             overflow-x: auto;
         }
-    
+
     }
 
     @keyframes scroll {
@@ -476,7 +482,7 @@ body{
 
     .sign-in{
         display: flex;
-        justify-content: right;
+        justify-content: center;
         margin: 30px 70px 0px;
 
 
@@ -502,7 +508,7 @@ body{
 
     .userBox{
         display: flex;
-        justify-content: right;
+        justify-content: center;
 
         .styleBox{
             display: flex;
@@ -530,178 +536,19 @@ body{
                 background-color: $primary-color;
                 border: solid 3px $secondary-color;
             }
-        }
-    }
-
-    .about-box{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin:20px 10vw;
-        background-color: $offWhite;
-        border: solid 5px $primary-color;
-        border-radius:10px;
-        padding: 30px;
-        h2{
-            color: $secondary-color;
-        }
-    }
-}
-
-@media(max-width: $phone){
-    .Head{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        background-color:$primary-color;
-        width: 80vw;
-        margin: auto;
-        margin-top: 100px;
-        border-radius: 20px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-    
-    
-        .logo {
-            position: absolute;
-            height: 100px;
-            width: auto;
-            margin-top: -200px;
-        }
-    
-        h1{
-            margin-top: 50px;
-            color: $offWhite;
-            font-family:Arial, Helvetica, sans-serif;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-    
-        .nav-link{
-            transition: transform 0.5s;
-            display: inline-block;
-            padding: 20px;
-            color: $offWhite;
-            text-decoration: none;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-    
-        .nav-link:hover{
-            color: $highlight-color;
-            transform: scale(1.1);
-        }
-    }
-
-    .scroll{
-        margin: 30px auto;
-        height: auto;
-        max-width: 80vw;
-        background-color: $secondary-color;
-        border: solid 5px $primary-color;
-        border-radius: 10px;
-    
-        ::-webkit-scrollbar {
-            height: 1.5em;
-            width: 12px;
-            background-color: $primary-color;
-        }
-        ::-webkit-scrollbar-thumb {
-            background-color: $primary-color-dark;
-            border-radius: 6px;
-        }
-        .plain{
-            text-decoration: none;
-            color: inherit;
-        }
-    
-        .card {
-            margin: 30px;
-            max-width: 200px;
-            height: 350px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: $offWhite;
-            color: $accent-color;
-    
-            .card-img{
-                margin: 10px;
-                width: 180px;
-                height: auto;
-            }
-        }
-        .overflow-auto{
-            flex-wrap: nowrap;
-            overflow-x: auto;
-        }
-    
-    }
-
-    @keyframes scroll {
-        from{
-            // transform: translateX(0);
-            scroll-position:left top;
-        }
-        to{
-            // transform: translateX(-100%);
-            scroll-position:right bottom;
-        }
-    }
-
-    .sign-in{
-        display: flex;
-        justify-content: center;
-        margin: 30px 70px 0px;
-
-
-        .log-btn{
-            transition: all 0.5s;
-            padding:  10px 20px;
-            border-radius: 10px;
-            background-color: $secondary-color;
-            color: $offWhite;
-            text-decoration: none;
-            border:  3px solid $primary-color;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-        }
-
-        .log-btn:hover{
-            background-color: $highlight-color;
-            color: $secondary-color;
-            border: 3px solid $secondary-color;
-            text-shadow: 2px 2px 4px rgba(144, 134, 134, 0.5);
-        }
-    }
-
-    .userBox{
-        display: flex;
-        justify-content: center;
-
-        .styleBox{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin: 30px 70px 0px;
-            color: $offWhite;
-            background-color: $primary-color;
-            border-radius: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            padding: 5px 10px;
-            border: solid 3px $secondary-color;
-            width: max-content;
-
-            button{
+            a{
+                text-decoration: none;
                 transition: all 0.5s;
                 border-radius: 20px;
+                margin:10px;
                 background-color: $secondary-color;
                 color: $offWhite;
                 border: solid 3px $primary-color-dark;
                 text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                padding: 2px 15px;
             }
-            button:hover{
-                background-color: $primary-color;
+            a:hover{
+                background-color: $accent-color;
                 border: solid 3px $secondary-color;
             }
         }
@@ -718,6 +565,205 @@ body{
         border-radius:10px;
         padding: 30px;
         text-align: center;
+        h2{
+            color: $secondary-color;
+        }
+    }
+}
+
+@media(max-width: $phone){
+    .Head{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        background-color:$primary-color;
+        width: 90vw;
+        margin: auto;
+        margin-top: 100px;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+
+
+        .logo {
+            position: absolute;
+            height: 100px;
+            width: auto;
+            margin-top: -200px;
+        }
+    
+        h1{
+            margin-top: 50px;
+            color: $offWhite;
+            font-family:Arial, Helvetica, sans-serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+    
+        .nav-link{
+            transition: transform 0.5s;
+            display: inline-block;
+            padding: 20px;
+            color: $offWhite;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: small;
+        }
+    
+        .nav-link:hover{
+            color: $highlight-color;
+            transform: scale(1.1);
+        }
+    }
+
+    .scroll{
+        margin: 30px auto;
+        height: auto;
+        max-width: 80vw;
+        background-color: $secondary-color;
+        border: solid 5px $primary-color;
+        border-radius: 10px;
+    
+        ::-webkit-scrollbar {
+            height: 1.5em;
+            width: 12px;
+            background-color: $primary-color;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: $primary-color-dark;
+            border-radius: 6px;
+        }
+        .plain{
+            text-decoration: none;
+            color: inherit;
+        }
+    
+        .card {
+            margin: 20px;
+            width: 200px;
+            height: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $offWhite;
+            color: $accent-color;
+            text-align: center;
+    
+            .card-img{
+                margin: 10px;
+                // margin: auto;
+                width: 180px;
+                height: auto;
+            }
+
+            .card-body{
+                width: 200px;
+            }
+        }
+        .overflow-auto{
+            flex-wrap: nowrap;
+            overflow-x: auto;
+        }
+
+    }
+
+    @keyframes scroll {
+        from{
+            // transform: translateX(0);
+            scroll-position:left top;
+        }
+        to{
+            // transform: translateX(-100%);
+            scroll-position:right bottom;
+        }
+    }
+
+    .sign-in{
+        display: flex;
+        justify-content: center;
+        margin: 30px 70px 0px;
+
+
+        .log-btn{
+            transition: all 0.5s;
+            padding:  10px 20px;
+            border-radius: 10px;
+            background-color: $secondary-color;
+            color: $offWhite;
+            text-decoration: none;
+            border:  3px solid $primary-color;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+        }
+
+        .log-btn:hover{
+            background-color: $highlight-color;
+            color: $secondary-color;
+            border: 3px solid $secondary-color;
+            text-shadow: 2px 2px 4px rgba(144, 134, 134, 0.5);
+        }
+    }
+
+    .userBox{
+        display: flex;
+        justify-content: center;
+
+        .styleBox{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 70px 0px;
+            color: $offWhite;
+            background-color: $primary-color;
+            border-radius: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border: solid 3px $secondary-color;
+            width: max-content;
+
+            button{
+                transition: all 0.5s;
+                border-radius: 20px;
+                background-color: $secondary-color;
+                color: $offWhite;
+                border: solid 3px $primary-color-dark;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+            button:hover{
+                background-color: $primary-color;
+                border: solid 3px $secondary-color;
+            }
+            a{
+                text-decoration: none;
+                transition: all 0.5s;
+                border-radius: 20px;
+                margin:10px;
+                background-color: $secondary-color;
+                color: $offWhite;
+                border: solid 3px $primary-color-dark;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                padding: 2px 15px;
+            }
+            a:hover{
+                background-color: $accent-color;
+                border: solid 3px $secondary-color;
+            }
+        }
+    }
+
+    .about-box{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin:auto;
+        margin-bottom: 30px;
+        background-color: $offWhite;
+        border: solid 5px $primary-color;
+        border-radius:10px;
+        padding: 30px;
+        text-align: center;
+        width: 90vw;
         h2{
             color: $secondary-color;
         }

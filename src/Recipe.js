@@ -42,7 +42,7 @@ function Recipe(props) {
         })
         setComments(commentsArray);
       }else {
-        console.log("No data available");
+        // console.log("No data available");
       }
 
       if(passedUser){
@@ -124,6 +124,8 @@ function Recipe(props) {
           <button type="submit">Post</button>
         </form>)
       }
+
+      {comments? (<div className="card"> <p className="card-body"> There seem to be no comments here. Be the first to contribute!</p> </div>) : (<></>)}
 
 
        {comments.map((comment) => (

@@ -1,13 +1,17 @@
-import { getAuth } from "firebase/auth";
+import { getAuth, updateProfile} from "firebase/auth";
 import React from "react";
 import { Link } from "react-router-dom";
+import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
 import 'bootstrap/dist/css/bootstrap.css';
 import './Styles/Profile.scss';
+import { Form } from "react-bootstrap";
 
 
 class Profile extends React.Component{
     state = {
         user: null,
+        profilePicture: null,
+        setProfilePicture: null,
     }
 
     componentDidMount(){
@@ -20,7 +24,37 @@ class Profile extends React.Component{
         })
     }
 
-    signout() {
+    pictureStateChange = async(event) =>{
+        this.setState({profilePicture: event.target.files[0]});
+    }
+
+    handleProfilePictureChange = async(event) => {
+        event.preventDefault();
+        const storage = getStorage();
+        const filename = `${this.state.user.displayName}_${this.state.profilePicture}`
+        const filePath = 'Profile-Pictures/' + filename;
+        const storageRef = ref(storage, filePath);
+
+        await uploadBytes(storageRef, this.state.profilePicture).then((snapshot) => {
+            return getDownloadURL(snapshot.ref);
+        }).then((downloadURL) => {
+
+            const user = getAuth().currentUser;
+
+            return updateProfile(user,{
+                photoURL: downloadURL,
+            })
+        }).then(()=>{
+               const user = getAuth().currentUser;
+               this.setState({user:{...this.state.user, profilePicture:user.photoURL}})
+        }).catch((error) => {
+            console.log(error);
+        });
+
+    };
+
+
+    signOut() {
         getAuth().signOut();
     }
 
@@ -33,7 +67,20 @@ class Profile extends React.Component{
                     <div className="user-profile">
                         <p className="displayname">{user.displayName}</p>
                         <p className="user-email">email: {user.email}</p>
-                        <button className="logOut" onClick={this.signout}>Log Out</button>
+
+                            <div>
+
+                                <Form onSubmit={this.handleProfilePictureChange}>
+                                    <Form.Group className="file_upload_group">
+
+                                        <input type="file" accept="image/*"  required={true} onChange={this.pictureStateChange}/>
+
+                                        <button type='submit'>Update picture</button>
+                                    </Form.Group>
+                                </Form>
+                             <img  className="profile-picture" src={this.state.user.photoURL} alt="Profile" />
+                            </div>
+                        <button className="logOut" onClick={this.signOut}>Log Out</button>
                     </div>
                 ):(
                     <div className="no-log">

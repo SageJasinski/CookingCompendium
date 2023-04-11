@@ -12,7 +12,7 @@ some features comming soon are:
   - user verified recipies
   - user verified comments
 
-**please visit the site at [cookingcompendium.com](http://www.cookingcompendium.com)** 
+**please visit the site at [cookingcompendium.com](http://www.cookingcompendium.com)**
 
 ## Current version
 
