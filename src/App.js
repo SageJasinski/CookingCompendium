@@ -102,7 +102,7 @@ class App extends React.Component{
         <Navbar className='main-nav'>
           <div className="nav-container">
             <Nav>
-              <Link to="/Feed" onClick={() => {this.pathHandler('feed')}} className='nav-link'>Main Feed</Link>
+              {/* <Link to="/Feed" onClick={() => {this.pathHandler('feed')}} className='nav-link'>Main Feed</Link> */}
               <Link to="/sorted" onClick={() => {this.pathHandler('meal')}} className='nav-link'>Meal</Link>
               <Link to="/sorted" onClick={() => {this.pathHandler('dessert')}} className='nav-link'>Dessert</Link>
               <Link to="/sorted"  onClick={() => {this.pathHandler('alphaSort')}} className='nav-link'>A-Z</Link>
