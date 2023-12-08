@@ -134,12 +134,7 @@ class App extends React.Component{
 
         <div className='about-box'>
             <h2>What Is the Compendium?</h2>
-            <p>Welcome to the cooking compendium, where we take old, and new, family recipes and digitizes them on this site. We also offer comments under each recipe so that you can know of others success making the things you love. Here at CookingCompendium we are all about connecting people together through food they love. Some features coming soon are:</p>
-            <ul>
-              <li> Reaction to recipes and comments to find the yummiest of each category</li>
-              <li>A histories tab where you can see the original source for each recipe</li>
-              <li>A sharables tab where you can send your foodie pictures to other food minded individuals</li>
-            </ul>
+            <p>Cooking Compendium is your ultimate online destination for timeless family recipes. Our website brings together a vast collection of cherished recipes passed down through generations, allowing users to explore and recreate these culinary delights in their own kitchens. <br/> With Cooking Compendium, you can delve into a treasure trove of old family recipes that have stood the test of time. Discover beloved classics, secret family favorites, and hidden gems from around the world. Whether you're looking for comforting soups, hearty main courses, delectable desserts, or anything in between, we have a wide range of recipes to suit every taste and occasion. <br/>What sets Cooking Compendium apart is the interactive community it fosters. As a registered user, you can engage with fellow food enthusiasts by leaving comments and sharing your experiences with specific recipes. Discuss tips, variations, and personal anecdotes, creating a vibrant space for culinary discussions.<br/>Furthermore, Cooking Compendium offers a personalized experience through user profiles. By creating an account, you can save your favorite recipes, curating your own recipe collection tailored to your preferences. Easily access these recipes whenever you need them, and find inspiration for your next gastronomic adventure.<br/>Join our community of passionate home cooks and culinary enthusiasts at Cooking Compendium. Embrace the rich traditions of family recipes, share your love for food, and create lasting connections through the universal language of cooking.</p>
         </div>
 
       </>
